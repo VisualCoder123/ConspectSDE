@@ -109,7 +109,7 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Section
-Стохастические дифференциальные уравнения (СДУ)
+Стохастический интеграл, формула Ито
 \end_layout
 
 \begin_layout Subsection
@@ -202,8 +202,7 @@ LatexCommand tableofcontents
 \begin_inset Formula $0\leq s<t$
 \end_inset
 
- на непересекающихся интервалах независимы, .
- Из этого следует, что 
+ на непересекающихся интервалах независимы: 
 \begin_inset Formula $E\Delta_{t}w\Delta_{s}w=0$
 \end_inset
 
@@ -219,7 +218,7 @@ LatexCommand tableofcontents
 \begin_inset Formula $\mu$
 \end_inset
 
- и 
+, 
 \begin_inset Formula $\nu$
 \end_inset
 
@@ -286,7 +285,7 @@ LatexCommand tableofcontents
 - измеримая случайная величина, определяемая соотношением 
 \begin_inset Formula 
 \[
-\int_{H}E\left[\xi|{\cal H}\right]P\left(dw\right)=\int_{H}\xi\left(\omega\right)P\left(d\omega\right),\forall H\in{\cal H}
+\int_{H}E\left[\xi|{\cal H}\right]P\left(d\omega\right)=\int_{H}\xi\left(\omega\right)P\left(d\omega\right),\forall H\in{\cal H}
 \]
 
 \end_inset
@@ -311,15 +310,15 @@ LatexCommand tableofcontents
 \begin_inset Formula $\nu$
 \end_inset
 
- абсолютно непрерывна относительно 
+ 
+\series bold
+абсолютно непрерывна относительно
+\series default
+ 
 \begin_inset Formula $\mu$
 \end_inset
 
-.
-\end_layout
-
-\begin_layout Standard
-Напомним, что это значит следующее: 
+ (это значит: если 
 \begin_inset Formula $\mu\left(A\right)=0,A\in{\cal F}$
 \end_inset
 
@@ -394,11 +393,7 @@ LatexCommand tableofcontents
 \end_inset
 
 .
- 
-\end_layout
-
-\begin_layout Standard
-Эта мера 
+ Эта мера 
 \begin_inset Formula $\mu\left(H\right)$
 \end_inset
 
@@ -445,10 +440,10 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Enumerate
-\begin_inset Formula $E\left[\xi|{\cal H}\right]=E\left[\xi\right]$
+\begin_inset Formula $E\left[\xi|{\cal H}\right]=E\xi$
 \end_inset
 
- ??? Правильная ли формула
+ 
 \end_layout
 
 \begin_layout Enumerate
@@ -528,6 +523,19 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Standard
+Рассмотрим разбиение вида:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename photosForConspect/razb.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Предположим, что 
 \begin_inset Formula $A\left(s\right)$
 \end_inset
@@ -538,7 +546,7 @@ LatexCommand tableofcontents
 \begin_layout Standard
 \begin_inset Formula 
 \[
-I\left(A\right)=\sum_{k=1}^{n}A\left(s_{k}\right)\Delta_{s_{k}}w=\sum_{k=1}^{n}A\left(s_{k}\right)\left[w\left(s_{k}+\Delta s\right)-w\left(s_{k}\right)\right]
+I\left(A\right)=\sum_{k=1}^{n}A\left(s_{k}\right)\Delta_{s_{k}}\omega=\sum_{k=1}^{n}A\left(s_{k}\right)\left[\omega\left(s_{k}+\Delta s\right)-\omega\left(s_{k}\right)\right]
 \]
 
 \end_inset
@@ -576,10 +584,36 @@ I\left(A\right)=\sum_{k=1}^{n}A\left(s_{k}\right)\Delta_{s_{k}}w=\sum_{k=1}^{n}A
 \begin_inset Formula $EI\left(A\right)$
 \end_inset
 
- воспользуемся свойствами условных средних 
+ воспользуемся свойствами условных средних (
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+св-во 2 усл.
+ сред.
+ и св-во 2 Винеровского процесса)
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ 
 \begin_inset Formula 
 \[
-E\sum_{k=1}^{n}A\left(s_{k}\right)\Delta_{s_{k}}w=E\left[\sum_{k=1}^{n}E\left(A\left(s_{k}\right)\Delta_{s_{k}}w\right)/{\cal F}_{s_{k}}\right]=E\left[\sum_{k=1}^{n}A\left(s_{k}\right)E\left[\Delta_{s_{k}}w|{\cal F}_{s_{k}}\right]\right]=0
+E\sum_{k=1}^{n}A\left(s_{k}\right)\Delta_{s_{k}}\omega=E\left[\sum_{k=1}^{n}E\left(A\left(s_{k}\right)\Delta_{s_{k}}\omega\right)/{\cal F}_{s_{k}}\right]=E\left[\sum_{k=1}^{n}A\left(s_{k}\right)E\left[\Delta_{s_{k}}\omega|{\cal F}_{s_{k}}\right]\right]=0
 \]
 
 \end_inset
@@ -588,11 +622,13 @@ E\sum_{k=1}^{n}A\left(s_{k}\right)\Delta_{s_{k}}w=E\left[\sum_{k=1}^{n}E\left(A\
 \end_layout
 
 \begin_layout Enumerate
-\begin_inset Formula $E\left|I\left(A\right)\right|^{2}=E\left[\sum A\left(s_{k}\right)\Delta_{s_{k}}w\right]^{2}=E\sum\left(A\left(s_{k}\right)\Delta_{s_{k}}w\right)^{2}+E\left[\sum\sum A\left(s_{k}\right)\Delta_{s_{k}}wA\left(s_{k}\right)\Delta_{s_{k}}w\right]^{2}+E\left[\sum\sum A\left(s_{k}\right)\Delta_{s_{k}}wA\left(s_{j}\right)\Delta_{s_{j}}w\right]$
-\end_inset
+\begin_inset Formula 
+\begin{multline*}
+E\left|I\left(A\right)\right|^{2}=E\left[\sum A\left(s_{k}\right)\Delta_{s_{k}}\omega\right]^{2}=\\
+=E\sum\left(A\left(s_{k}\right)\Delta_{s_{k}}\omega\right)^{2}+E\left[\sum\sum A\left(t_{k}\right)\Delta_{t_{k}}\omega\cdot A\left(s_{k}\right)\Delta_{s_{k}}\omega\right]^{2}+E\left[\sum\sum A\left(s_{k}\right)\Delta_{s_{k}}\omega\cdot A\left(s_{j}\right)\Delta_{s_{j}}\omega\right]=\\
+=E\sum E\left[\left[A\left(S_{k}\right)\Delta_{s_{k}}\omega\right]^{2}|{\cal F}_{s_{k}}\right]=E\sum A^{2}\left(s_{k}\right)E\left[\Delta_{s_{k}}\omega\right]^{2}|{\cal F}_{s_{k}}=E\sum A^{2}\left(s_{k}\right)\left[s_{k+1}-s_{k}\right]
+\end{multline*}
 
-
-\begin_inset Formula $E\sum E\left[\left[A\left(S_{k}\right)\Delta_{s_{k}}w\right]^{2}|{\cal F}_{s_{k}}\right]=E\sum A^{2}\left(s_{k}\right)E\left[\Delta_{s_{k}}w\right]^{2}|{\cal F}_{s_{k}}=E\sum A^{2}\left(s_{k}\right)\left[s_{k+1}-s_{k}\right]$
 \end_inset
 
 
@@ -607,15 +643,7 @@ E\left|I\left(A\right)\right|^{2}=\sum EA^{2}\left(s_{k}\right)\Delta_{k}s
 \end_layout
 
 \begin_layout Standard
-??? В формулах выше должно быть 
-\begin_inset Formula ${\cal F}$
-\end_inset
-
- или 
-\begin_inset Formula $F$
-\end_inset
-
-
+??? во второй формуле непонятно с индексами
 \end_layout
 
 \begin_layout Standard
@@ -632,11 +660,6 @@ E\left|I\left(A\right)\right|^{2}=\sum EA^{2}\left(s_{k}\right)\Delta_{k}s
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-Нам нужно понять - на какие классы функций мы можем распространить этот
- объект.
 \end_layout
 
 \begin_layout Standard
@@ -688,11 +711,7 @@ A\left(s_{k}\right) & s_{k}\leq s<s_{k+1}\\
 \end_layout
 
 \begin_layout Standard
-Мы будем пользоваться этим достаточно часто.
-\end_layout
-
-\begin_layout Standard
-Соответствующий интеграл с переменным верхним пределом, определим соотношение
+Соответствующий интеграл с переменным верхним пределом определим соотношением
 \begin_inset Formula 
 \[
 \int_{0}^{t}A\left(s\right)dw\left(s\right)=\int_{0}^{T}I\left(s\leq t\right)A\left(s\right)dw\left(s\right)
@@ -737,7 +756,7 @@ A\left(s_{k}\right) & s_{k}\leq s<s_{k+1}\\
 \end_inset
 
 , 
-\begin_inset Formula $E\left[M\left(\text{T}\right)|{\cal F}_{t}\right]=M\left(t\right)$
+\begin_inset Formula $E\left[M\left(T\right)|{\cal F}_{t}\right]=M\left(t\right)$
 \end_inset
 
  
@@ -756,10 +775,16 @@ A\left(s_{k}\right) & s_{k}\leq s<s_{k+1}\\
 \begin_inset Formula $X$
 \end_inset
 
- - локальный мартингал.
+ - 
+\series bold
+локальный мартингал
+\series default
+.
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 Примеры:
 \end_layout
 
@@ -775,10 +800,11 @@ A\left(s_{k}\right) & s_{k}\leq s<s_{k+1}\\
 \end_inset
 
 , 
-\begin_inset Formula $E\left[w\left(T\right)-w\left(t\right)+w\left(t\right)|{\cal F}_{t}\right]=w\left(t\right)$
+\begin_inset Formula $E\left[w\left(T\right)-w\left(t\right)+w\left(t\right)|{\cal F}_{t}\right]=E\left[w\left(T\right)-w\left(t\right)|{\cal F}_{t}\right]+w\left(t\right)=w\left(t\right)$
 \end_inset
 
 .
+ Используется свойство приращения Гауссовской величины.
 \end_layout
 
 \begin_layout Standard
@@ -791,7 +817,7 @@ A\left(s_{k}\right) & s_{k}\leq s<s_{k+1}\\
 \begin_inset Formula $E\left|w\left(t\right)\right|^{2}=t$
 \end_inset
 
- 
+ ??? П
 \end_layout
 
 \begin_layout Standard
@@ -816,7 +842,7 @@ A\left(s_{k}\right) & s_{k}\leq s<s_{k+1}\\
 \end_layout
 
 \begin_layout Standard
-Действительно,
+Действительно, по аналогии с предыдущим примером
 \end_layout
 
 \begin_layout Standard
@@ -827,7 +853,7 @@ A\left(s_{k}\right) & s_{k}\leq s<s_{k+1}\\
 \begin_inset Formula $E\left[\int_{t}^{T}A\left(s\right)dw\left(s\right)|{\cal F}_{t}\right]=0$
 \end_inset
 
-
+ 
 \end_layout
 
 \begin_layout Standard
@@ -884,6 +910,10 @@ A\left(s_{k}\right) & s_{k}\leq s<s_{k+1}\\
 .
 \end_layout
 
+\begin_layout Subsection
+Формула Ито
+\end_layout
+
 \begin_layout Standard
 Говорят, что случайный процесс 
 \begin_inset Formula $\xi\left(t\right)$
@@ -904,19 +934,12 @@ A\left(s_{k}\right) & s_{k}\leq s<s_{k+1}\\
 
 \end_layout
 
-\begin_layout Subsection
-Формула Ито
-\end_layout
-
 \begin_layout Standard
 Пусть 
 \begin_inset Formula $\xi\left(t\right)$
 \end_inset
 
- - случайный процесс, обладающий стохастическим дифференциалом, 
-\end_layout
-
-\begin_layout Standard
+ - случайный процесс, обладающий стохастическим дифференциалом 
 \begin_inset Formula $d\xi=a\left(t\right)dt+A\left(t\right)dw\left(t\right)$
 \end_inset
 
@@ -1008,7 +1031,7 @@ d\eta\left(t\right)=\left[\frac{\partial f}{\partial t}\left(t,\xi\left(t\right)
 \begin_inset Formula $\Delta w\sim\sqrt{\Delta t}$
 \end_inset
 
-, мы этим воспользовались.
+, мы этим воспользовались ??? В каком смысле
 \end_layout
 
 \begin_layout Standard
@@ -1088,7 +1111,7 @@ d\eta\left(t\right)=\left[\frac{\partial f}{\partial t}\left(t,\xi\left(t\right)
 \begin_inset Formula $=\left(w\left(T\right)\right)^{2}-\left(w\left(0\right)\right)^{2}=T-0=2\int_{0}^{T}w\left(t\right)dw\left(t\right)$
 \end_inset
 
-
+ ??? Не до конца понятная формула
 \end_layout
 
 \begin_layout Standard
@@ -1236,63 +1259,14 @@ d\eta\left(t\right)=\left[\frac{\partial f}{\partial t}\left(t,\xi\left(t\right)
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $f\left(t,x\right)=\frac{1}{\left(\sqrt{2\pi t}\right)^{d}}e^{-\frac{\left|\left|x\right|\right|^{2}}{2t}}=\frac{1}{\left(\sqrt{2\pi t}\right)^{d}}\prod_{k=1}^{d}e^{-\frac{x_{k}^{2}}{2t}}$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-При этом 
-\begin_inset Formula $E\left|\left|w\left(t\right)\right|\right|^{2}=\sum_{k=1}^{d}E\left|w_{k}\left(t\right)\right|^{2}=td$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-Стохастические дифференциальные интегралы (многомерный случай)
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $w\left(0\right)=0$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $E\Delta w=0$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $E\left(\Delta w\right)^{2}=\Delta t$
-\end_inset
-
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $p\left(t,x,y\right)=\frac{1}{\sqrt{2\pi}}e^{-\frac{\left(y-x\right)^{2}}{2t}}$
+\begin_inset Formula $f\left(t,x\right)=\frac{1}{\left(\sqrt{2\pi}t\right)^{d}}e^{-\frac{\left|\left|x\right|\right|^{2}}{2t}}=\frac{1}{\left(\sqrt{2\pi}t\right)^{d}}\prod_{k=1}^{d}e^{-\frac{x_{k}^{2}}{2t}}$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Enumerate
-\begin_inset Formula $w\left(t\right)\in{\cal R}^{n},w\left(t\right)=\left(w_{1}\left(t\right),...,w_{n}\left(t\right)\right)$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Enumerate
-\begin_inset Formula $Ew_{i}\left(t\right)w_{k}\left(t\right)=0,i\neq k=1,...,n$
+\begin_inset Formula $Ew_{i}\left(t\right)w_{k}\left(t\right)=0,i\neq k=1,...,d$
 \end_inset
 
 
@@ -1303,15 +1277,14 @@ d\eta\left(t\right)=\left[\frac{\partial f}{\partial t}\left(t,\xi\left(t\right)
 \end_inset
 
 
-\begin_inset Formula $\left|\left|w\left(t\right)\right|\right|^{2}=E\sum_{i=1}^{n}\left(w_{i}\left(t\right)\right)^{2}=n\cdot t$
+\begin_inset Formula $\left|\left|w\left(t\right)\right|\right|^{2}=E\sum_{i=1}^{d}\left(w_{i}\left(t\right)\right)^{2}=d\cdot t$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Enumerate
-p
-\begin_inset Formula $\left(t,x,y\right)=\frac{1}{\sqrt{\left(2\pi t\right)^{n}}}e^{-\frac{\left|\left|y-x\right|\right|^{2}}{2t}},x,y\in{\cal R}^{n}$
+\begin_inset Formula $p\left(t,x,y\right)=???$
 \end_inset
 
  ??? Правильны ли эти свойства,
@@ -1323,7 +1296,7 @@ p
 Стохастический интеграл: 
 \series default
 пусть 
-\begin_inset Formula $A\left(t\right)\in{\cal R}^{n}\varotimes{\cal R}^{n}\equiv Matr^{n}$
+\begin_inset Formula $A\left(t\right)\in{\cal R}^{n}\varotimes{\cal R}^{n}\equiv Matz^{n}$
 \end_inset
 
  - ступенчатая функция:
@@ -1374,7 +1347,7 @@ I\left(A\right)=\sum A\left(t_{k}\right)\Delta_{k}w\in{\cal R}^{n}
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $EI\left(A\right)=E\sum A\left(t_{k}\right)\Delta_{k}w=E\sum A\left(t_{k}\right)E\left[\Delta_{k}w/F_{t_{k}}\right]=0$
+\begin_inset Formula $EI\left(A\right)=E\sum A\left(t_{k}\right)\Delta_{k}w=E\sum A\left(t_{k}\right)E\left[\Delta_{k}w/{\cal F}_{t_{k}}\right]=0$
 \end_inset
 
 , т.к.
@@ -1383,29 +1356,29 @@ I\left(A\right)=\sum A\left(t_{k}\right)\Delta_{k}w\in{\cal R}^{n}
 \end_inset
 
 - 
-\begin_inset Formula $F_{t_{k}}$
+\begin_inset Formula ${\cal F}_{t_{k}}$
 \end_inset
 
  - измеримая.
- ??? Здесь нет лишнего E
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula $\left(I\left(A\right)\right)_{l}=\sum_{k=1}^{m}\sum^{t}A_{jl}\Delta_{k}w_{j}$
 \end_inset
 
-
+ ??? Правильная ли это формула? В некоторых конспектах ее нет, по каким
+ индексам идет суммирование - непонятно
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\Delta_{k}w_{j}\left(t_{k}+1\right)-w_{j}\left(t_{k}\right)$
+\begin_inset Formula $\Delta_{k}w_{j}=w_{j}\left(t_{k+1}\right)-w_{j}\left(t_{k}\right)$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $E\left(I\left(A\right)^{2}\right)=\sum_{k}...AA\Delta_{k}t$
+\begin_inset Formula $E\left(I\left(A\right)^{2}\right)=\sum_{k}AA\Delta_{k}t$
 \end_inset
 
 
@@ -1435,7 +1408,7 @@ I\left(A\right)=\sum A\left(t_{k}\right)\Delta_{k}w\in{\cal R}^{n}
 \end_inset
 
 , тогда 
-\begin_inset Formula $=E\left[E\left[\left(A|t_{k}\right)\Delta_{k}w,A\left(t_{j}\right)\Delta_{j}w|F_{t_{j}}\right]\right]$
+\begin_inset Formula $=E\left[E\left[A\left(t_{k}\right)\Delta_{k}w,A\left(t_{j}\right)\Delta_{j}w|F_{t_{j}}\right]\right]$
 \end_inset
 
 
@@ -1446,11 +1419,11 @@ I\left(A\right)=\sum A\left(t_{k}\right)\Delta_{k}w\in{\cal R}^{n}
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\left(A\left(t_{k}\right)\Delta_{k}w,A\left(t_{j}\Delta_{j}w\right)\right)=\sum_{j}A_{lq}\left(t_{l}\right)\Delta_{j}w_{q}\cdot\sum_{m}A_{lm}\left(t_{k}\right)\Delta_{k}w_{m}$
+\begin_inset Formula $\left(A\left(t_{k}\right)\Delta_{k}w,A\left(t_{j}\right)\Delta_{j}w\right)=E\sum_{j}A_{lq}\left(t_{l}\right)\Delta_{j}w_{q}\cdot E\sum_{m}A_{lm}\left(t_{k}\right)\Delta_{k}w_{m}$
 \end_inset
 
  
-\begin_inset Formula $=\sum_{l}\sum_{m}A_{ml}\left(t_{k}\right)\Delta_{k}w_{m}=A_{ql}\left(t_{i}\right)p_{j}\cdot w_{q}$
+\begin_inset Formula $=E\sum_{l}\sum_{m}A_{ml}\left(t_{k}\right)\Delta_{k}w_{m}=A_{ql}\left(t_{i}\right)p_{j}\cdot w_{q}$
 \end_inset
 
  ??? ЧТО С ИНДЕКСАМИ? Кажется, здесь есть серьезная ошибка.
@@ -1483,7 +1456,7 @@ I\left(A\right)=\sum A\left(t_{k}\right)\Delta_{k}w\in{\cal R}^{n}
 \begin_inset Formula $E\sum\left|A_{ml}\left(t_{k}\right)\Delta_{k}w_{m}\right|^{2}$
 \end_inset
 
-
+ ??? Что это значит
 \end_layout
 
 \begin_layout Standard
@@ -1528,7 +1501,9 @@ I\left(A\right)=\sum A\left(t_{k}\right)\Delta_{k}w\in{\cal R}^{n}
 \begin_inset Formula $\xi\left(t\right)\in{\cal R}^{n}$
 \end_inset
 
- имеет стохастический дифференциал
+ имеет 
+\series bold
+стохастический дифференциал
 \end_layout
 
 \begin_layout Standard
@@ -1633,18 +1608,12 @@ d\eta=\left[\frac{\partial f}{\partial t}+\sum_{i=1}^{n}a_{i}\left(t\right)\frac
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-d\eta=\left[\frac{\partial f\left(t,\xi\left(t\right)\right)}{\partial t}+\left(a\left(t\right),\nabla f\left(t,\xi\left(t\right)\right)\right)+\frac{1}{2}TrA\left(t\right)f''\left(t,\xi\left(t\right)\right)A^{T}\left(t\right)\right]dt+\left(\nabla f,A\left(t\right)dw\left(t\right)\right)
+d\eta=\left[\frac{\partial f\left(t,\xi\left(t\right)\right)}{\partial t}+\left(a\left(t\right),\nabla f\left(t,\xi\left(t\right)\right)\right)+\frac{1}{2}TrA\left(t\right)f''\left(t,\xi\left(t\right)\right)A^{T}\left(t\right)\right]dt+\left(\nabla f,A\left(t\right)\right)dw\left(t\right)
 \end{equation}
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-Примеры опущены
 \end_layout
 
 \begin_layout Standard
@@ -1666,7 +1635,7 @@ d\eta=\left[\frac{\partial f\left(t,\xi\left(t\right)\right)}{\partial t}+\left(
 \begin_inset Formula $A\left(t,x\right)$
 \end_inset
 
- заданные функции.
+ - заданные функции.
 \end_layout
 
 \begin_layout Standard
@@ -1729,7 +1698,7 @@ d\xi=a\left(t,\xi\left(t\right)\right)dt+A\left(t,\xi\left(t\right)\right)dw\lef
 \begin_inset Formula $\xi\left(t\right)$
 \end_inset
 
- является решением (5.1), (5.2) если с вероятностью 1 справедливо равенство
+ является решением (3.1), (3.2) если с вероятностью 1 справедливо равенство
 \end_layout
 
 \begin_layout Standard
@@ -1784,7 +1753,7 @@ C,L & -\text{неслучайные постоянные}
 Теорема 3.1: 
 \series default
 Пусть коэффициенты (3.1) (3.2) (или 3.4) удовлетворяют условию У1.
- Тогда существует единственно ерешение 
+ Тогда существует единственное решение 
 \begin_inset Formula $\xi\left(t\right)=\xi_{s,x}\left(t\right)$
 \end_inset
 
@@ -1800,7 +1769,7 @@ C,L & -\text{неслучайные постоянные}
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\xi\left(t\right)=x+\int_{s}^{t}a\left(\vartheta,x\right)d\vartheta+\int_{s}^{T}A\left(\vartheta,x\right)dw\left(\vartheta\right)$
+\begin_inset Formula $\xi^{1}\left(t\right)=x+\int_{s}^{t}a\left(\vartheta,x\right)d\vartheta+\int_{s}^{T}A\left(\vartheta,x\right)dw\left(\vartheta\right)$
 \end_inset
 
 
@@ -1839,6 +1808,7 @@ C,L & -\text{неслучайные постоянные}
 \end_inset
 
 , удовлетворяющий (5.4).
+ ??? Точно 2? Может быть n?
 \end_layout
 
 \begin_layout Standard
@@ -1883,18 +1853,18 @@ C,L & -\text{неслучайные постоянные}
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\alpha\left(t\right)\leq A+\int_{0}^{t}B\left[A+\int_{0}^{\tau}B\alpha\left(\vartheta\right)d\vartheta\right]d\tau=A+ABt+\int_{0}^{t}\int_{0}^{\tau}B\alpha\left(\vartheta\right)d\vartheta\leq$
+\begin_inset Formula $\alpha\left(t\right)\leq A+\int_{0}^{t}B\left[A+\int_{0}^{\tau}B\alpha\left(\vartheta\right)d\vartheta\right]d\tau=A+ABt+\int_{0}^{t}\int_{0}^{\tau}B\alpha\left(\vartheta\right)d\vartheta d\tau\leq$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\alpha\left(t\right)\leq A\left(1+Bt\right)+B\int_{0}^{t}\int_{0}^{\tau}A+\int_{0}^{\vartheta_{1}}B\alpha\left(\vartheta\right)\alpha\vartheta d\vartheta d\tau$
+\begin_inset Formula $\alpha\left(t\right)\leq A\left(1+Bt\right)+B\int_{0}^{t}\int_{0}^{\tau}\left[A+\int_{0}^{\vartheta_{1}}B\alpha\left(\vartheta\right)\right]d\vartheta d\tau$
 \end_inset
 
 ...
- ??? A+ - не нужно ли поставить скобку? Ведь перед A нет дифференциала
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1924,8 +1894,11 @@ C,L & -\text{неслучайные постоянные}
 
 \begin_layout Standard
 
+\emph on
+Замечание
 \series bold
-Замечание: 
+\emph default
+: 
 \series default
 аналогично доказывается, что если 
 \begin_inset Formula $\alpha\left(t\right)\leq A+\int_{0}^{t}B\left(\tau\right)\alpha\left(\tau\right)d\tau$
@@ -1960,7 +1933,7 @@ C,L & -\text{неслучайные постоянные}
 Оценим разность 
 \begin_inset Formula 
 \[
-\alpha\left(t\right)=E\left|\xi\left(t\right)-\eta\left(t\right)\right|^{2}=E\left\{ \int_{0}^{t}\left[a\left(\vartheta,\xi\left(\vartheta\right)\right)-a\left(\vartheta,\eta\left(\vartheta\right)\right)\right]d\vartheta+\int_{0}^{t}A\left(\vartheta,\xi\left(\vartheta\right)\right)-A\left(\vartheta,\eta\left(\vartheta\right)\right)dw\left(\vartheta\right)\right\} ^{2}
+\alpha\left(t\right)=E\left|\xi\left(t\right)-\eta\left(t\right)\right|^{2}=E\left\{ \int_{0}^{t}\left[a\left(\vartheta,\xi\left(\vartheta\right)\right)-a\left(\vartheta,\eta\left(\vartheta\right)\right)\right]d\vartheta+\int_{0}^{t}\left[A\left(\vartheta,\xi\left(\vartheta\right)\right)-A\left(\vartheta,\eta\left(\vartheta\right)\right)\right]dw\left(\vartheta\right)\right\} ^{2}
 \]
 
 \end_inset
@@ -1969,36 +1942,44 @@ C,L & -\text{неслучайные постоянные}
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\leq$
-\end_inset
-
-Воспользуемся тем, что 
-\begin_inset Formula $\left|a+b\right|^{2}\leq2a^{2}+2b^{2}$
-\end_inset
-
- ??? это правильно?
+??? Почему интегралы от 0 а не от s?
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\left|\int_{0}^{t}a\left(\tau\right)d\tau\right|^{2}\leq\left[\int_{0}^{t}1\cdot a\left(\tau\right)d\tau\right]^{2}\leq\int_{0}^{t}1^{2}d\tau\leq\int_{0}^{t}a^{2}\left(\tau\right)d\tau=t\int_{0}^{t}a^{2}\left(\tau\right)d\tau$
+С учетом того, что 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\left|\int_{0}^{t}a\left(\tau\right)d\tau\right|^{2}\leq$
 \end_inset
 
-, 
+выкладки
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula $\left|\left(c,b\right)\right|^{2}\leq\left|c\right|^{2}\left|b\right|^{2}$
 \end_inset
 
+, а значит 
+\begin_inset Formula $\left[\int_{0}^{t}1\cdot a\left(\tau\right)d\tau\right]^{2}\leq\int_{0}^{t}1^{2}d\tau\int_{0}^{t}a^{2}\left(\tau\right)d\tau=t\int_{0}^{t}a^{2}\left(\tau\right)d\tau$
+\end_inset
 
+, 
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula $E\left|\int_{0}^{t}A\left(\tau\right)dw\left(\tau\right)\right|^{2}\leq\int_{0}^{t}A^{2}\left(\tau\right)d\tau$
 \end_inset
 
-
+ ??? Откуда эта формула
 \end_layout
 
 \begin_layout Standard
-Тогда
+Воспользуемся тем, что 
+\begin_inset Formula $\left|a+b\right|^{2}\leq2a^{2}+2b^{2}$
+\end_inset
+
+ 
 \end_layout
 
 \begin_layout Standard
@@ -2009,7 +1990,9 @@ C,L & -\text{неслучайные постоянные}
 \end_layout
 
 \begin_layout Standard
-Используя условие У1 мы получим
+Используя условие У1 мы получим ??? Как мы их используем? Почему второй
+ интеграл с мат.
+ ожиданием?
 \end_layout
 
 \begin_layout Standard
@@ -2020,7 +2003,7 @@ C,L & -\text{неслучайные постоянные}
 \begin_inset Formula $E\left|\xi\left(t\right)-\eta\left(t\right)\right|^{2}=0$
 \end_inset
 
- 
+ ??? Как здесь используется лемма Гронуолла
 \end_layout
 
 \begin_layout Standard
@@ -2051,10 +2034,7 @@ C,L & -\text{неслучайные постоянные}
 \begin_inset Formula $E\left|\xi^{n+2}\left(t\right)-\xi^{n+1}\left(t\right)\right|^{2}\leq L\left(t+1\right)\int_{s}^{t}E\left|\xi^{n+1}\left(\vartheta\right)-\xi^{n}\left(\vartheta\right)\right|^{2}d\vartheta\leq L\left(t+1\right)\int_{0}^{t}\int_{0}^{\vartheta}L\left(\vartheta+1\right)E\left|\xi^{n}\left(\vartheta\right)-\xi^{n-1}\left(\vartheta\right)\right|^{2}d\vartheta\leq$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
+...
 \begin_inset Formula $\leq\frac{\left[L\left(t+1\right)\right]^{n}}{n!}\leq...$
 \end_inset
 
@@ -2066,11 +2046,11 @@ C,L & -\text{неслучайные постоянные}
 \begin_inset Formula $\underset{n\rightarrow\infty}{lim}\frac{\left[L\left(t+1\right)\right]^{n}}{n!}=0$
 \end_inset
 
-
+ ??? Как это работает
 \end_layout
 
 \begin_layout Standard
-При этом пределеная функция (предельный процесс) уодвлетворяет оценке 
+При этом предельная функция (предельный процесс) уодвлетворяет оценке 
 \begin_inset Formula $E\left|\left|\xi\left(t\right)\right|\right|^{2}<\infty$
 \end_inset
 
@@ -2092,7 +2072,7 @@ C,L & -\text{неслучайные постоянные}
 \begin_inset Formula $E\left|\xi\left(t\right)\right|^{2}\leq3\left|x\right|^{2}+L\left(t+1\right)\int_{0}^{t}C\left[1+\xi^{2}\left(\tau\right)\right]d\tau\leq\left[3\left|x\right|^{2}+LC\left(t+1\right)t\right]+\int_{0}^{t}CE\left|\xi^{2}\left(\tau\right)\right|^{2}d\tau\leq$
 \end_inset
 
-
+ 
 \end_layout
 
 \begin_layout Standard
@@ -2104,6 +2084,10 @@ C,L & -\text{неслучайные постоянные}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+??? Откуда здесь тройка?
 \end_layout
 
 \begin_layout Standard
@@ -2191,7 +2175,7 @@ d\xi\left(t\right)=a\left(\xi\left(t\right)\right)dt+A\left(\xi\left(t\right)\ri
 \begin_inset Formula $\xi_{s,x}\left(t\right)$
 \end_inset
 
-- это решение (5.4).
+- это решение (3.4).
  Обозначим 
 \begin_inset Formula $\frac{\partial}{\partial x}\xi_{s,x}\left(t\right)=\underset{\Delta x\rightarrow0}{lim}\frac{\xi_{s,x+\Delta}\left(t\right)-\xi_{s,x}\left(t\right)}{\Delta x}$
 \end_inset
@@ -2216,6 +2200,10 @@ d\eta\left(\vartheta\right)=a_{x}'\left(\xi\left(\vartheta\right)\right)\eta\lef
 \end_layout
 
 \begin_layout Standard
+??? Как получить эти формулы
+\end_layout
+
+\begin_layout Standard
 Таким образом, если коэффициент 
 \begin_inset Formula $a\left(x\right)$
 \end_inset
@@ -2232,7 +2220,11 @@ d\eta\left(\vartheta\right)=a_{x}'\left(\xi\left(\vartheta\right)\right)\eta\lef
 \begin_inset Formula $\xi_{s,x}\left(t\right)$
 \end_inset
 
-уравнения (3.4) тоже k раз дифференцируемы.
+уравнения (3.4) тоже 
+\begin_inset Formula $k$
+\end_inset
+
+ раз дифференцируемы.
 \end_layout
 
 \begin_layout Standard
@@ -2314,13 +2306,6 @@ d\gamma\left(t\right)=a_{x}'\left(\xi_{s,x}\left(\vartheta\right)\right)\gamma\l
 \end_inset
 
 , 
-\begin_inset Formula $u\left(t,x\right)$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset Formula $\eta\left(t\right)=u\left(t,\xi\left(t\right)\right)$
 \end_inset
 
@@ -2328,7 +2313,7 @@ d\gamma\left(t\right)=a_{x}'\left(\xi_{s,x}\left(\vartheta\right)\right)\gamma\l
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $d\eta\left(t\right)=\left[\frac{\partial u\left(t,\xi\left(t\right)\right)}{\partial t}+a\left(\xi\left(t\right)\right)+a\left(\xi\left(t\right)\right)\frac{\partial u\left(t,\xi\left(t\right)\right)}{\partial x}+\frac{1}{2}A^{2}\left(\xi\left(t\right)\right)\frac{\partial^{2}u\left(t,\xi\left(t\right)\right)}{\partial x^{2}}\right]$
+\begin_inset Formula $d\eta\left(t\right)=\left[\frac{\partial u\left(t,\xi\left(t\right)\right)}{\partial t}+a\left(\xi\left(t\right)\right)\frac{\partial u\left(t,\xi\left(t\right)\right)}{\partial x}+\frac{1}{2}A^{2}\left(\xi\left(t\right)\right)\frac{\partial^{2}u\left(t,\xi\left(t\right)\right)}{\partial x^{2}}\right]$
 \end_inset
 
 
@@ -2373,14 +2358,14 @@ d\gamma\left(t\right)=a_{x}'\left(\xi_{s,x}\left(\vartheta\right)\right)\gamma\l
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $u\left(T,s\left(T\right)\right)-u\left(s,x\right)=\int_{s}^{T}\left[...\right]dt+\int_{s}^{T}\frac{\partial u}{\partial x}\left(t,\xi\left(t\right)\right)A\left(\xi t\right)d\omega\left(t\right)$
+\begin_inset Formula $u\left(T,\xi\left(T\right)\right)-u\left(s,x\right)=\int_{s}^{T}\left[...\right]dt+\int_{s}^{T}\frac{\partial u}{\partial x}\left(t,\xi\left(t\right)\right)A\left(\xi\left(t\right)\right)d\omega\left(t\right)$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $Eu_{0}\left(s\left(T\right)\right)-u\left(s,x\right)=0$
+\begin_inset Formula $Eu_{0}\left(\xi\left(T\right)\right)-u\left(s,x\right)=0$
 \end_inset
 
  
@@ -2410,7 +2395,7 @@ d\gamma\left(t\right)=a_{x}'\left(\xi_{s,x}\left(\vartheta\right)\right)\gamma\l
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\frac{\partial u\left(t,\xi\left(t\right)\right)}{\partial t}+a\frac{\partial u\left(t,\xi\left(t\right)\right)}{\partial x}+\frac{1}{2}A^{2}\left(\xi\left(t\right)\right)\frac{\partial^{2}u\left(t,\xi\left(t\right)\right)}{\partial x}+f\left(\xi\left(t\right)\right)-f\left(\xi\left(t\right)\right)]dt+\frac{\partial u\left(t,\xi\left(t\right)\right)}{dx}A\left(\xi\left(t\right)\right)dw\left(t\right)=d\eta\left(t\right)=du\left(t,\xi\left(x\right)\right)$
+\begin_inset Formula $\left[\frac{\partial u\left(t,\xi\left(t\right)\right)}{\partial t}+a\frac{\partial u\left(t,\xi\left(t\right)\right)}{\partial x}+\frac{1}{2}A^{2}\left(\xi\left(t\right)\right)\frac{\partial^{2}u\left(t,\xi\left(t\right)\right)}{\partial x}+f\left(\xi\left(t\right)\right)-f\left(\xi\left(t\right)\right)\right]dt+\frac{\partial u\left(t,\xi\left(t\right)\right)}{dx}A\left(\xi\left(t\right)\right)dw\left(t\right)=d\eta\left(t\right)=du\left(t,\xi\left(x\right)\right)$
 \end_inset
 
 
@@ -2420,7 +2405,7 @@ d\gamma\left(t\right)=a_{x}'\left(\xi_{s,x}\left(\vartheta\right)\right)\gamma\l
 \begin_inset Formula $u\left(s,x\right)=E\left[u_{0}\left(\xi\left(T\right)\right)-\int_{s}^{T}f\left(\xi\left(t\right)\right)dt\right]$
 \end_inset
 
-
+ ??? Почему, откуда появилось второе слагаемое с интегралом
 \end_layout
 
 \begin_layout Standard
