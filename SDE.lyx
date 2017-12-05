@@ -2599,12 +2599,12 @@ E\left[f\left(\xi\left(T\right)\right)|{\cal F}_{t}\right]=E\left[f\left(\xi\lef
 
 \end_layout
 
-\begin_layout Section
-Генератор эволюционного семейства u(s,t)
-\end_layout
-
 \begin_layout Standard
+
+\series bold
 Генератор эволюционного семейства 
+\series default
+
 \begin_inset Formula $u\left(s,t\right)$
 \end_inset
 
@@ -2627,11 +2627,19 @@ E\left[f\left(\xi\left(T\right)\right)|{\cal F}_{t}\right]=E\left[f\left(\xi\lef
 \end_layout
 
 \begin_layout Standard
-Генератор марковского процесса называют оператор L, задаваемы йсоотношением
+
+\series bold
+Генератор марковского процесса
+\series default
+ - это оператор 
+\begin_inset Formula $L$
+\end_inset
+
+, задаваемый соотношением
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\underset{\Delta s\rightarrow0}{lim}\frac{Ef\left(\xi_{s,x}\left(s+\Delta s\right)\right)-f\left(x\right)}{\Delta sd}=Lf\left(x\right)$
+\begin_inset Formula $\underset{\Delta s\rightarrow0}{lim}\frac{Ef\left(\xi_{s,x}\left(s+\Delta s\right)\right)-f\left(x\right)}{\Delta s}=Lf\left(x\right)$
 \end_inset
 
  
@@ -2693,7 +2701,7 @@ d\xi=a\left(\xi\left(\vartheta\right)\right)d\vartheta+A\left(\xi\left(\vartheta
 \begin_layout Standard
 
 \series bold
-Теорема 6.1
+Теорема 5.1
 \series default
  Пусть 
 \begin_inset Formula $a\left(x\right),A\left(x\right)$
@@ -2703,7 +2711,7 @@ d\xi=a\left(\xi\left(\vartheta\right)\right)d\vartheta+A\left(\xi\left(\vartheta
 \begin_inset Formula $\xi_{s,x}\left(t\right)$
 \end_inset
 
-задачи (6.1).
+задачи (5.1).
  Тогда 
 \begin_inset Formula $\xi_{s,x}\left(t\right)$
 \end_inset
@@ -2719,21 +2727,17 @@ d\xi=a\left(\xi\left(\vartheta\right)\right)d\vartheta+A\left(\xi\left(\vartheta
 
 \begin_layout Standard
 Рассмотрим случайный процесс 
-\begin_inset Formula $\xi\left(t\right)=xt$
-\end_inset
-
- 
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\int_{s}^{t}a\left(\xi\left(\vartheta\right)\right)d\vartheta+\int_{s}^{t}A\left(\xi\left(\vartheta\right)\right)dw\left(\vartheta\right)=\xi\left(\tau\right)+\int_{\tau}^{s}a\left(\xi\left(\vartheta\right)\right)d\vartheta+\int_{\tau}^{t}A\left(\xi\left(\vartheta\right)\right)dw\left(\vartheta\right)$
+\begin_inset Formula $\xi\left(t\right)=x+\int_{s}^{t}a\left(\xi\left(\vartheta\right)\right)d\vartheta+\int_{s}^{t}A\left(\xi\left(\vartheta\right)\right)dw\left(\vartheta\right)=\xi\left(\tau\right)+\int_{\tau}^{s}a\left(\xi\left(\vartheta\right)\right)d\vartheta+\int_{\tau}^{t}A\left(\xi\left(\vartheta\right)\right)dw\left(\vartheta\right)$
 \end_inset
 
 .
 \end_layout
 
 \begin_layout Standard
-Это равенство вытекает из единственности решения (6.1)
+Это равенство вытекает из единственности решения (5.1)
 \end_layout
 
 \begin_layout Standard
@@ -2742,7 +2746,7 @@ d\xi=a\left(\xi\left(\vartheta\right)\right)d\vartheta+A\left(\xi\left(\vartheta
 \end_inset
 
 , 
-\begin_inset Formula $\eta=\xi\left(t\right)$
+\begin_inset Formula $\eta=\xi\left(\tau\right)$
 \end_inset
 
  можно представить в виде функции, зависящей от двух переменных 
@@ -2761,7 +2765,7 @@ d\xi=a\left(\xi\left(\vartheta\right)\right)d\vartheta+A\left(\xi\left(\vartheta
 \begin_inset Formula $\omega_{1}$
 \end_inset
 
-, поражденный стохастическим и обыкновенным интегралом.
+ поражден стохастическим и обыкновенным интегралом.
 \end_layout
 
 \begin_layout Standard
@@ -2786,10 +2790,7 @@ d\xi=a\left(\xi\left(\vartheta\right)\right)d\vartheta+A\left(\xi\left(\vartheta
 \begin_inset Formula $g$
 \end_inset
 
- можно представить в виде:
-\end_layout
-
-\begin_layout Standard
+ можно представить в виде: 
 \begin_inset Formula $g\left(\omega,\omega_{1}\right)=\sum_{k=0}^{\infty}\phi_{k}\left(\omega\right)\psi_{k}\left(\omega_{1}\right)$
 \end_inset
 
@@ -2823,7 +2824,7 @@ d\xi=a\left(\xi\left(\vartheta\right)\right)d\vartheta+A\left(\xi\left(\vartheta
 \begin_inset Formula $\xi\left(t\right)$
 \end_inset
 
- - решение уравнения (6.1) со случайными коэффициентами.
+ - решение уравнения (5.1) со случайными коэффициентами.
  Рассмотрим функцию 
 \begin_inset Formula $u\left(s,x\right)=Ef\left(\xi_{s,x}\left(T\right)\right)$
 \end_inset
@@ -2851,17 +2852,21 @@ u\left(s+\Delta s,x\right)-u\left(s,x\right)=\int f\left(y\right)p\left(s+\Delta
 \begin_inset Formula $p\left(s,x,T,y\right)=\int p\left(s,x,s+\Delta s,z\right)p\left(s+\Delta s,z,T,y\right)dy$
 \end_inset
 
+ ??? Но ведь уравнение Чепмена-Колмогорова имеет вид: 
+\begin_inset Formula $p\left(s,x,t,y\right)=\int_{-\infty}^{\infty}p\left(s,x,\vartheta,z\right)p\left(\vartheta,z,t,y\right)dz$
+\end_inset
 
+ 
 \end_layout
 
 \begin_layout Standard
-Из (7.2) получим:
+Из (5.2) получим:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-u\left(s+\Delta s,x\right)-u\left(s,x\right)=\int f\left(y\right)p\left(s+\Delta s,x,T,y\right)dy-\int f\left(y\right)\int p\left(s,x,s+\Delta s,z\right)\cdot p\left(s+\Delta s,z,T,y\right)d\xi dy
+u\left(s+\Delta s,x\right)-u\left(s,x\right)=\int f\left(y\right)p\left(s+\Delta s,x,T,y\right)dy-\int f\left(y\right)\int p\left(s,x,s+\Delta s,z\right)\cdot p\left(s+\Delta s,z,T,y\right)dzdy
 \end{equation}
 
 \end_inset
@@ -2884,7 +2889,7 @@ u\left(s+\Delta s,x\right)-u\left(s,x\right)=\int f\left(y\right)p\left(s+\Delta
 \begin_inset Formula $\int f\left(y\right)p\left(s+\Delta s,z,T,y\right)=u\left(s+\Delta s,z\right)$
 \end_inset
 
- то из (6.3) следует, что и 
+ то из (5.3) следует, что и 
 \begin_inset Formula $u\left(s+\Delta s,x\right)-u\left(s,x\right)=\int f\left(y\right)p\left(s+\Delta s,x,T,y\right)dy-\int u\left(s+\Delta s,z\right)p\left(s+\Delta s,z,T,y\right)dz$
 \end_inset
 
@@ -2896,7 +2901,7 @@ u\left(s+\Delta s,x\right)-u\left(s,x\right)=\int f\left(y\right)p\left(s+\Delta
 \begin_inset Formula $u\left(s+\Delta s,x\right)-u\left(s,x\right)=E\left\{ u\left(s+\Delta s,\xi_{s+\Delta s,x}\left(t\right)\right)-u\left(s+\Delta s,\xi_{s+\Delta s,\xi\left(s+\Delta s\right)}\left(T\right)\right)\right\} $
 \end_inset
 
-
+ ??? Почему
 \end_layout
 
 \begin_layout Standard
@@ -2919,7 +2924,7 @@ u\left(s+\Delta s,x\right)-u\left(s,x\right)=\int f\left(y\right)p\left(s+\Delta
 \begin_inset Formula $u\left(s+\Delta s,\xi_{s,x}\left(s+\Delta s\right)\right)-u\left(s+\Delta s,x\right)$
 \end_inset
 
- ??? Правильная ли формула
+
 \end_layout
 
 \begin_layout Standard
@@ -2930,7 +2935,7 @@ u\left(s+\Delta s,x\right)-u\left(s,x\right)=\int f\left(y\right)p\left(s+\Delta
 \begin_inset Formula $\underset{\Delta s\rightarrow0}{lim}\frac{u\left(s+\Delta s,x\right)-u\left(s,x\right)}{\Delta s}=\frac{\partial u}{\partial s}=-\left[a\left(x\right)\frac{\partial u}{\partial x}+\frac{1}{2}A^{2}\left(x\right)\frac{\partial^{2}u}{\partial x^{2}}\right]$
 \end_inset
 
-
+ ??? как здесь используется ф-ла Ито?
 \end_layout
 
 \begin_layout Standard
@@ -2946,7 +2951,7 @@ u\left(s+\Delta s,x\right)-u\left(s,x\right)=\int f\left(y\right)p\left(s+\Delta
 \begin_inset Formula $u\left(T,x\right)=f\left(x\right)$
 \end_inset
 
- КР Задание №2
+ 
 \end_layout
 
 \begin_layout Standard
@@ -3204,7 +3209,7 @@ u\left(s,x\right)=E\left[\eta\left(T\right)f\left(\xi_{s,x}\left(T\right)\right)
 \begin_inset Formula $u\left(s,x\right)$
 \end_inset
 
- вида (7.7) удовлетворяет 7.4
+ вида (5.7) удовлетворяет (5.4)
 \end_layout
 
 \begin_layout Standard
@@ -3220,7 +3225,16 @@ u\left(s,x\right)=E\left[\eta\left(T\right)f\left(\xi_{s,x}\left(T\right)\right)
 \begin_inset Formula $u\left(s+\Delta s,x\right)-u\left(s,x\right)$
 \end_inset
 
+ ??? Здесь 
+\begin_inset Formula $\eta\left(t\right)$
+\end_inset
 
+ - интеграл с 
+\begin_inset Formula $T$
+\end_inset
+
+ в качестве верхнего предела, см.
+ следующий вопрос
 \end_layout
 
 \begin_layout Standard
@@ -3254,6 +3268,20 @@ u\left(s,x\right)=E\left[\eta\left(T\right)f\left(\xi_{s,x}\left(T\right)\right)
 \begin_inset Formula $\eta\left(s+\Delta s\right)=\exp\int_{s}^{s+\Delta s}c\left(\xi\left(a\right)\right)d\vartheta$
 \end_inset
 
+ ??? Здесь 
+\begin_inset Formula $\eta\left(t\right)$
+\end_inset
+
+- верхний предел зависит от аргумента.
+ Может быть 
+\begin_inset Formula $\eta\left(t\right)=\int_{s}^{t}$
+\end_inset
+
+...
+ а не 
+\begin_inset Formula $\int_{s}^{T}$
+\end_inset
+
 
 \end_layout
 
@@ -3262,7 +3290,7 @@ u\left(s,x\right)=E\left[\eta\left(T\right)f\left(\xi_{s,x}\left(T\right)\right)
 \begin_inset Formula $E\left[\eta\left(s+\Delta s\right)-\eta\left(s\right)\right]f\left(\xi_{s,x}\left(s+\Delta s\right)\right)+E\left[\eta\left(s\right)[f\left(\xi_{s,x}\left(s+\Delta s\right)\right)-f\left(x\right)\right]$
 \end_inset
 
-
+ ??? Есть лишняя открывающая скобка
 \end_layout
 
 \begin_layout Standard
@@ -3325,7 +3353,7 @@ d\xi=a\left(\xi\left(\vartheta\right)\right)d\vartheta+A\left(\xi\left(\vartheta
 \end_inset
 
 .
- Тогда добавляется и вычитается в квадратных скобках 
+ Тогда, добавляя и вычитая в квадратных скобках 
 \begin_inset Formula $f\left(\xi\left(t\right)\right)$
 \end_inset
 
@@ -3381,6 +3409,10 @@ d\xi=a\left(\xi\left(\vartheta\right)\right)d\vartheta+A\left(\xi\left(\vartheta
 \end_layout
 
 \begin_layout Standard
+??? Может быть, более подробно это расписать
+\end_layout
+
+\begin_layout Standard
 
 \series bold
 02.11.17
@@ -3394,7 +3426,7 @@ d\xi=a\left(\xi\left(\vartheta\right)\right)d\vartheta+A\left(\xi\left(\vartheta
 \begin_inset Formula $Grf\left(x\right)=\lim\frac{Ef\left(\xi_{s,x}\left(s+\Delta s\right)-f\left(x\right)\left(t_{k}\right)\right)}{\Delta s}=a\left(x\right)f'\left(x\right)+\frac{1}{2}A^{2}\left(x\right)F''\left(x\right)$
 \end_inset
 
- ??? Тут точно Grf?
+ 
 \end_layout
 
 \begin_layout Standard
@@ -3473,6 +3505,20 @@ d\xi=a\left(\xi\left(\vartheta\right)\right)d\vartheta+A\left(\xi\left(\vartheta
 \end_layout
 
 \begin_layout Standard
+
+\series bold
+Семилинейными параболическими уравнениями
+\series default
+ будем называть параболические уравнения, коэффициенты которых зависят как
+ от временной и пространственной переменных, так и от искомой скалярной
+ функции 
+\begin_inset Formula $f$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
 Рассмотрим семилинейное параболическое уравнение 
 \begin_inset Formula 
 \begin{equation}
@@ -3481,7 +3527,7 @@ d\xi=a\left(\xi\left(\vartheta\right)\right)d\vartheta+A\left(\xi\left(\vartheta
 
 \end_inset
 
- Наряду с задачей (7.1) рассмотрим стохастическую задачу
+ Наряду с задачей (6.1) рассмотрим стохастическую задачу
 \end_layout
 
 \begin_layout Standard
@@ -3523,6 +3569,8 @@ u\left(s,x\right)=Eu_{0}\left(\xi_{s,x}\left(T\right)\right)
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 Условие С9.1
 \end_layout
 
@@ -3545,7 +3593,7 @@ u\left(s,x\right)=Eu_{0}\left(\xi_{s,x}\left(T\right)\right)
 \end_layout
 
 \begin_layout Standard
-Решать задачу (9.2) (.3) мы будем с помощью методов последовательного приближения.
+Решать задачу (6.2-6.3) мы будем с помощью методов последовательного приближения.
 \end_layout
 
 \begin_layout Standard
@@ -3595,8 +3643,8 @@ u\left(s,x\right)=Eu_{0}\left(\xi_{s,x}\left(T\right)\right)
 \end_layout
 
 \begin_layout Standard
-Заметим, что в силу условий С9, на каждом шаге последнее приближение можем
- утверждать существование и единственность решений СДУ.
+Заметим, что в силу условий С9, на каждом шаге последовательных приближений
+ можем утверждать существование и единственность решений СДУ.
 \end_layout
 
 \begin_layout Standard
@@ -3617,8 +3665,11 @@ u\left(s,x\right)=Eu_{0}\left(\xi_{s,x}\left(T\right)\right)
 \end_layout
 
 \begin_layout Standard
-В силу теоремы Арцела-Асколи, для того, чтобы семейство непрерывных функций
- 
+В силу 
+\emph on
+теоремы Арцела-Асколи
+\emph default
+, для того, чтобы семейство непрерывных функций 
 \begin_inset Formula $u^{n}\left(s,x\right)$
 \end_inset
 
@@ -3725,7 +3776,7 @@ d\xi=a\left(\xi\left(\vartheta\right),g\left(\vartheta,\xi\left(\vartheta\right)
 \end_layout
 
 \begin_layout Standard
-Наша цль - показать, что существует функция 
+Наша цель - показать, что существует функция 
 \begin_inset Formula $B\left(t\right)$
 \end_inset
 
@@ -3785,6 +3836,10 @@ d\xi=a\left(\xi\left(\vartheta\right),g\left(\vartheta,\xi\left(\vartheta\right)
 \end_layout
 
 \begin_layout Standard
+?? Что дальше?
+\end_layout
+
+\begin_layout Standard
 
 \series bold
 Практика
@@ -3810,8 +3865,7 @@ d\xi=a\left(\xi\left(\vartheta\right),g\left(\vartheta,\xi\left(\vartheta\right)
 \end_layout
 
 \begin_layout Standard
-u
-\begin_inset Formula $\left(s,x\right)=E\left[sin\left(\xi\left(T\right)\right)+\int_{s}^{T}sin\xi\left(\vartheta\right)d\vartheta\right]$
+\begin_inset Formula $u\left(s,x\right)=E\left[sin\left(\xi\left(T\right)\right)+\int_{s}^{T}sin\xi\left(\vartheta\right)d\vartheta\right]$
 \end_inset
 
 
@@ -4000,14 +4054,14 @@ u
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\xi_{n}\left(t\right)=x+\int_{k=1}^{n}\int_{t_{k}}^{t_{k+1}}a\left(\xi\left(\vartheta\right)\right)d\vartheta+\int_{t_{k}}^{t_{k+1}}A\left(\xi\left(\vartheta\right)\right)dw\left(\vartheta\right)$
+\begin_inset Formula $\xi_{n}\left(t\right)=x+\sum_{k=1}^{n}\int_{t_{k}}^{t_{k+1}}\left[a\left(\xi\left(\vartheta\right)\right)d\vartheta+\int_{t_{k}}^{t_{k+1}}A\left(\xi\left(\vartheta\right)\right)dw\left(\vartheta\right)\right]$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\xi_{n}\left(t\right)=x+\sum a\left(\xi\left(t_{k}\right)\right)\Delta_{k}+A\left(\xi\left(t_{k}\right)\right)\Delta_{k}w$
+\begin_inset Formula $\xi_{n}\left(t\right)=x+\sum\left[a\left(\xi\left(t_{k}\right)\right)\Delta_{k}+A\left(\xi\left(t_{k}\right)\right)\Delta_{k}w\right]$
 \end_inset
 
  
@@ -4024,7 +4078,7 @@ u
 \begin_inset Formula $u\left(s,x\right)=E\nu\left(\xi_{s,x}\left(???,w\right)\right)$
 \end_inset
 
-
+???
 \end_layout
 
 \begin_layout Standard
@@ -4042,7 +4096,7 @@ u
 \end_layout
 
 \begin_layout Standard
-Напомним, что мы расматриваем систему 
+Напомним, что мы расматриваем систему ??? Когда мы начали ее рассматривать?
 \begin_inset Formula 
 \begin{equation}
 d\xi=a^{u}\left(\xi\left(\vartheta\right)\right)d\vartheta+A^{u}\left(\xi\left(\vartheta\right)\right)dw\left(\vartheta\right),\xi\left(s\right)=x
@@ -4065,7 +4119,7 @@ u\left(s,x\right)=Eu_{0}\left(\xi_{s,x}\left(T\right)\right),\text{где}a^{u}\
 \end_layout
 
 \begin_layout Standard
-Для того, чтобы построить решения системы (8.2) рассмотрим последовательные
+Для того, чтобы построить решения системы (7.2) рассмотрим последовательные
  приближения 
 \begin_inset Formula 
 \begin{equation}
@@ -4080,7 +4134,7 @@ d\xi_{n}\left(\vartheta\right)=a^{u_{n}}\left(\xi_{n}\left(\vartheta\right)\righ
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-,\xi_{n}\left(s\right)=x
+\xi_{n}\left(s\right)=x
 \end{equation}
 
 \end_inset
@@ -4154,7 +4208,7 @@ g\left(s,x\right)=Eu_{0}\left(\xi_{s,x}\left(T\right)\right)
 \end_layout
 
 \begin_layout Standard
-Рассмотрим трим??? уравнения (8.5) и (8.6) и положим, что если 
+Рассмотрим уравнения (7.5) и (7.6) и положим, что если 
 \begin_inset Formula $\nu\left(s,x\right)$
 \end_inset
 
@@ -4162,7 +4216,7 @@ g\left(s,x\right)=Eu_{0}\left(\xi_{s,x}\left(T\right)\right)
 \begin_inset Formula $g\left(s,x\right)$
 \end_inset
 
- тоже ограниченная Липшецева функцияс одинаковой константой Липшица.
+ тоже ограниченная Липшецева функция с одинаковой константой Липшица.
 \end_layout
 
 \begin_layout Standard
@@ -4260,7 +4314,7 @@ g\left(s,x\right)=Eu_{0}\left(\xi_{s,x}\left(T\right)\right)
 \begin_inset Formula $L_{0},K_{???}$
 \end_inset
 
-- изнстанта липица??? функции 
+- константа Липшица функции 
 \begin_inset Formula $u_{0}\left(x\right)$
 \end_inset
 
@@ -4474,10 +4528,7 @@ g\left(s,x\right)=Eu_{0}\left(\xi_{s,x}\left(T\right)\right)
 \begin_inset Formula $\frac{\partial u}{\partial s}+\frac{\partial u\left(s,x\right)}{\partial s}+u\left(s,x\right)\frac{\partial u}{\partial x}+\frac{1}{2}\frac{\partial^{2}u}{\partial x^{2}}=0$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
+, 
 \begin_inset Formula $u\left(T,x\right)=u_{0}\left(x\right)$
 \end_inset
 
