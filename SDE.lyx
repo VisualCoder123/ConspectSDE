@@ -257,11 +257,7 @@ LatexCommand tableofcontents
 \end_inset
 
 , но не наоборот).
- 
-\end_layout
-
-\begin_layout Standard
-Тогда 
+ Тогда 
 \series bold
 условное математическое ожидание 
 \series default
@@ -1248,18 +1244,14 @@ d\eta\left(t\right)=\left[\frac{\partial f}{\partial t}\left(t,\xi\left(t\right)
 \end_inset
 
  имеет плотность распределения 
-\begin_inset Formula $f\left(t,x\right)=\frac{1}{\sqrt{2\pi t^{2}}}e^{-\frac{x^{2}}{2t}}$
-\end_inset
-
-, 
-\begin_inset Formula $F\left(t,x\right)=P\left(\xi_{t}\leq x\right)$
+\begin_inset Formula $f\left(t,x\right)=\frac{1}{\sqrt{2\pi t}}e^{-\frac{x^{2}}{2t}}$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $f\left(t,x\right)=\frac{1}{\left(\sqrt{2\pi}t\right)^{d}}e^{-\frac{\left|\left|x\right|\right|^{2}}{2t}}=\frac{1}{\left(\sqrt{2\pi}t\right)^{d}}\prod_{k=1}^{d}e^{-\frac{x_{k}^{2}}{2t}}$
+\begin_inset Formula $f\left(t,x\right)=\frac{1}{\left(\sqrt{2\pi t}\right)^{d}}e^{-\frac{\left|\left|x\right|\right|^{2}}{2t}}=\frac{1}{\left(\sqrt{2\pi t}\right)^{d}}\prod_{k=1}^{d}e^{-\frac{x_{k}^{2}}{2t}}$
 \end_inset
 
 
@@ -1333,7 +1325,7 @@ I\left(A\right)=\sum A\left(t_{k}\right)\Delta_{k}w\in{\cal R}^{n}
 \end_inset
 
  - 
-\begin_inset Formula $F_{t}^{w}$
+\begin_inset Formula ${\cal F}_{t}^{w}$
 \end_inset
 
  - измерима
@@ -1360,6 +1352,7 @@ I\left(A\right)=\sum A\left(t_{k}\right)\Delta_{k}w\in{\cal R}^{n}
 \end_inset
 
  - измеримая.
+ ???
 \end_layout
 
 \begin_layout Standard
@@ -1917,7 +1910,7 @@ C,L & -\text{неслучайные постоянные}
 
 \begin_layout Standard
 Для того, чтобы доказать единственность, мы предположим обратное, т.е.
- пусть суещствует 2 решения уравнения (5.4) 
+ пусть существует 2 решения уравнения (5.4) 
 \begin_inset Formula $\xi\left(t\right)$
 \end_inset
 
@@ -1946,21 +1939,11 @@ C,L & -\text{неслучайные постоянные}
 \end_layout
 
 \begin_layout Standard
-С учетом того, что 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $\left|\int_{0}^{t}a\left(\tau\right)d\tau\right|^{2}\leq$
-\end_inset
-
-выкладки
-\end_layout
-
-\begin_layout Standard
+Воспользуемся тем, что 
 \begin_inset Formula $\left|\left(c,b\right)\right|^{2}\leq\left|c\right|^{2}\left|b\right|^{2}$
 \end_inset
 
-, а значит 
+, тогда 
 \begin_inset Formula $\left[\int_{0}^{t}1\cdot a\left(\tau\right)d\tau\right]^{2}\leq\int_{0}^{t}1^{2}d\tau\int_{0}^{t}a^{2}\left(\tau\right)d\tau=t\int_{0}^{t}a^{2}\left(\tau\right)d\tau$
 \end_inset
 
@@ -1968,14 +1951,12 @@ C,L & -\text{неслучайные постоянные}
 \end_layout
 
 \begin_layout Standard
+Для второго слагаемого применим свойство 
 \begin_inset Formula $E\left|\int_{0}^{t}A\left(\tau\right)dw\left(\tau\right)\right|^{2}\leq\int_{0}^{t}A^{2}\left(\tau\right)d\tau$
 \end_inset
 
- ??? Откуда эта формула
-\end_layout
-
-\begin_layout Standard
-Воспользуемся тем, что 
+ ??? Откуда эта формула.
+ Также воспользуемся тем, что 
 \begin_inset Formula $\left|a+b\right|^{2}\leq2a^{2}+2b^{2}$
 \end_inset
 
@@ -1983,27 +1964,46 @@ C,L & -\text{неслучайные постоянные}
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\alpha\left(t\right)\leq t\int_{0}^{t}E\left|a\left(\vartheta,\xi\left(\vartheta\right)\right)-a\left(\vartheta,\eta\left(\vartheta\right)\right)\right|^{2}d\vartheta+\int_{0}^{t}E\left[A\left(\vartheta,\xi\left(\vartheta\right)\right)-A\left(\vartheta,\eta\left(\vartheta\right)\right)\right]^{2}d\vartheta$
+\begin_inset Formula 
+\[
+E\left|\xi\right|
+\]
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-Используя условие У1 мы получим ??? Как мы их используем? Почему второй
- интеграл с мат.
- ожиданием?
+\begin_inset Formula 
+\[
+\alpha\left(t\right)\leq t\int_{0}^{t}E\left|a\left(\vartheta,\xi\left(\vartheta\right)\right)-a\left(\vartheta,\eta\left(\vartheta\right)\right)\right|^{2}d\vartheta+\int_{0}^{t}E\left[A\left(\vartheta,\xi\left(\vartheta\right)\right)-A\left(\vartheta,\eta\left(\vartheta\right)\right)\right]^{2}d\vartheta
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Используя условие У1 мы получим ??? Как мы их используем?
+\end_layout
+
+\begin_layout Standard
+Формула ниже имеет вид предыдущей формулы, но вместо двух интегралов используетс
+я 
+\begin_inset Formula $\alpha\left(t\right)$
+\end_inset
+
+.
+ Видимо, мы чего-то не понимаем об условии У1 :)
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula $\alpha\left(t\right)\leq Lt\int_{0}^{t}\alpha\left(\vartheta\right)d\vartheta+L\int_{0}^{t}\alpha\left(\vartheta\right)d\vartheta=L\left(1+t\right)\int_{0}^{t}\alpha\left(\vartheta\right)d\vartheta$
 \end_inset
 
- в силу леммы Гронуолла 
-\begin_inset Formula $E\left|\xi\left(t\right)-\eta\left(t\right)\right|^{2}=0$
-\end_inset
-
- ??? Как здесь используется лемма Гронуолла
+ в силу леммы Гронуолла ??? Как здесь используется лемма Гронуолла
 \end_layout
 
 \begin_layout Standard
@@ -2042,15 +2042,38 @@ C,L & -\text{неслучайные постоянные}
 \end_layout
 
 \begin_layout Standard
-и 
+Первое неравенство - мы применяем формулу, разобранную в доказательстве
+ единства решения (там 
+\begin_inset Formula $\alpha\left(t\right)$
+\end_inset
+
+ было МО разности двух решений, здесь - разность последовательных приближений
+ к решению).
+ При этом от шага 
+\begin_inset Formula $n+2$
+\end_inset
+
+ и 
+\begin_inset Formula $n+1$
+\end_inset
+
+ мы переходим к шагам 
+\begin_inset Formula $n+1$
+\end_inset
+
+ и 
+\begin_inset Formula $n$
+\end_inset
+
+ соответственно.
+ Повторяя этот процесс многократно, мы сводим этот интеграл к дроби.
+ Дальше мы устремляем количество последовательных решений к бесконечности
+ и получаем, что 
 \begin_inset Formula $\underset{n\rightarrow\infty}{lim}\frac{\left[L\left(t+1\right)\right]^{n}}{n!}=0$
 \end_inset
 
- ??? Как это работает
-\end_layout
-
-\begin_layout Standard
-При этом предельная функция (предельный процесс) уодвлетворяет оценке 
+ .
+ При этом предельная функция (предельный процесс) удовлетворяет оценке 
 \begin_inset Formula $E\left|\left|\xi\left(t\right)\right|\right|^{2}<\infty$
 \end_inset
 
@@ -2058,14 +2081,22 @@ C,L & -\text{неслучайные постоянные}
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $E\left|\left|\xi\left(t\right)\right|\right|^{2}\leq3\left|\left|x\right|\right|^{2}+t\int_{0}^{t}\left|\vartheta,\xi\left(\vartheta\right)\right|^{2}d\vartheta+\int_{0}^{t}E\left|A\left(\vartheta,\xi\left(\vartheta\right)\right)\right|^{2}d\vartheta$
+Применим неравенство 
+\begin_inset Formula $\left|a+b+c\right|^{2}\leq3\left(\left|a\right|^{2}+\left|b\right|^{2}+\left|c\right|^{2}\right)$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-В силу У1
+\begin_inset Formula $E\left|\left|\xi\left(t\right)\right|\right|^{2}\leq3\left|\left|x\right|\right|^{2}+t\int_{0}^{t}E\left|a\left(\vartheta,\xi\left(\vartheta\right)\right)\right|^{2}d\vartheta+\int_{0}^{t}E\left|A\left(\vartheta,\xi\left(\vartheta\right)\right)\right|^{2}d\vartheta$
+\end_inset
+
+ ??? Почему тройка только у первого слагаемого
+\end_layout
+
+\begin_layout Standard
+В силу У1 ??? Почему в силу У1?
 \end_layout
 
 \begin_layout Standard
@@ -2079,15 +2110,11 @@ C,L & -\text{неслучайные постоянные}
 \begin_inset Formula $\leq\left[3\left|x\right|^{2}+LC\left(t+1\right)t\right]e^{Ct}$
 \end_inset
 
- и 
+ в силу Леммы Гронуолла и 
 \begin_inset Formula $\underset{0\leq t\leq T}{sup}E\left|\xi\left(t\right)\right|^{2}<\infty$
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-??? Откуда здесь тройка?
 \end_layout
 
 \begin_layout Standard
@@ -2101,6 +2128,9 @@ C,L & -\text{неслучайные постоянные}
  
 \series default
 Рассмотрим СДУ 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
 d\xi\left(t\right)=a\left(\xi\left(t\right)\right)dt+A\left(\xi\left(t\right)\right)dw\left(t\right)
@@ -2120,18 +2150,19 @@ d\xi\left(t\right)=a\left(\xi\left(t\right)\right)dt+A\left(\xi\left(t\right)\ri
 \end_layout
 
 \begin_layout Standard
-Для этого оценим разность 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $E\left|\xi_{s,x}\left(t\right)-\xi_{s,y}\left(t\right)\right|^{2}\leq3\left|x-y\right|^{2}+(t-s)\int_{s}^{t}E\left|a\right|\xi_{s,x}\left(\vartheta\right)-\left(\xi_{s,y}\left(\vartheta\right)\right)|^{2}d\vartheta+\int_{s}^{t}E\left|A\right|\xi_{s,x}\left(\vartheta\right))-A\left(\xi_{s,y}\left(\vartheta\right)\right)|^{2}]d\vartheta$
+Напомним, что 
+\begin_inset Formula $\xi_{s,x}\left(t\right)=x+\int_{s}^{t}a\left(\xi_{s,x}\left(\vartheta\right)\right)d\vartheta+A\left(\xi_{s,x}\left(\vartheta\right)\right)dw\left(\vartheta\right)$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\xi_{s,x}\left(t\right)=x+\int_{s}^{t}a\left(\xi_{s,x}\left(\vartheta\right)\right)d\vartheta+A\left(\xi_{s,x}\left(\vartheta\right)\right)dw\left(\vartheta\right)$
+Оценим разность 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $E\left|\xi_{s,x}\left(t\right)-\xi_{s,y}\left(t\right)\right|^{2}\leq3\left|x-y\right|^{2}+(t-s)\int_{s}^{t}E\left|a\left(\xi_{s,x}\left(\vartheta\right)\right)-a\left(\xi_{s,y}\left(\vartheta\right)\right)\right|^{2}d\vartheta+\int_{s}^{t}E\left|A\left(\xi_{s,x}\left(\vartheta\right)\right)-A\left(\xi_{s,y}\left(\vartheta\right)\right)\right|^{2}d\vartheta$
 \end_inset
 
 
@@ -2145,7 +2176,7 @@ d\xi\left(t\right)=a\left(\xi\left(t\right)\right)dt+A\left(\xi\left(t\right)\ri
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $=3\left(x-y\right)^{2}+3\left(t-s+1???\right)\int_{s}^{t}EL\left|\xi_{s,x}\left(\vartheta\right)-\xi_{s,y}\left(\vartheta\right)\right|^{2}d\vartheta\leq3\left(x-y\right)^{2}e^{kT}$
+\begin_inset Formula $=3\left(x-y\right)^{2}+3\left(t-s+1\right)\int_{s}^{t}EL\left|\xi_{s,x}\left(\vartheta\right)-\xi_{s,y}\left(\vartheta\right)\right|^{2}d\vartheta\leq3\left(x-y\right)^{2}e^{kT}$
 \end_inset
 
 , 
@@ -2160,7 +2191,8 @@ d\xi\left(t\right)=a\left(\xi\left(t\right)\right)dt+A\left(\xi\left(t\right)\ri
 \end_layout
 
 \begin_layout Standard
-??? Не мог бы кто-нибудь проверить эту формулу
+Я переписал эту формулу по сравнению с предыдущей версией конспекта.
+ Поменял порядок скобок так, чтобы это было логично :)
 \end_layout
 
 \begin_layout Standard
@@ -2268,10 +2300,6 @@ d\gamma\left(t\right)=a_{x}'\left(\xi_{s,x}\left(\vartheta\right)\right)\gamma\l
 \end_layout
 
 \begin_layout Standard
-???Мне кажется, что где-то ошибка
-\end_layout
-
-\begin_layout Standard
 Решение уравнения (3.8) имеет вид
 \end_layout
 
@@ -2328,13 +2356,11 @@ d\gamma\left(t\right)=a_{x}'\left(\xi_{s,x}\left(\vartheta\right)\right)\gamma\l
 \end_layout
 
 \begin_layout Standard
+Рассмотрим уравнение в частных производных 
 \begin_inset Formula $\frac{\partial u}{\partial s}+a\left(x\right)\frac{\partial u}{\partial x}+\frac{1}{2}A^{2}\left(x\right)\frac{\partial^{2}u}{\partial x^{2}}=0$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
+ с граничным условием 
 \begin_inset Formula $u\left(T,x\right)=u_{0}\left(x\right),s\leq t\leq T$
 \end_inset
 
@@ -2342,7 +2368,7 @@ d\gamma\left(t\right)=a_{x}'\left(\xi_{s,x}\left(\vartheta\right)\right)\gamma\l
 \end_layout
 
 \begin_layout Standard
-Проинтегрируем наши 
+Проинтегрируем 
 \begin_inset Formula $d\eta\left(t\right)$
 \end_inset
 
@@ -2361,7 +2387,7 @@ d\gamma\left(t\right)=a_{x}'\left(\xi_{s,x}\left(\vartheta\right)\right)\gamma\l
 \begin_inset Formula $u\left(T,\xi\left(T\right)\right)-u\left(s,x\right)=\int_{s}^{T}\left[...\right]dt+\int_{s}^{T}\frac{\partial u}{\partial x}\left(t,\xi\left(t\right)\right)A\left(\xi\left(t\right)\right)d\omega\left(t\right)$
 \end_inset
 
-
+ - формула Ньютона-Лейбница
 \end_layout
 
 \begin_layout Standard
@@ -2372,7 +2398,7 @@ d\gamma\left(t\right)=a_{x}'\left(\xi_{s,x}\left(\vartheta\right)\right)\gamma\l
 \end_layout
 
 \begin_layout Standard
-Математическое ожидание стохастического процесса раво нулю.
+Математическое ожидание стохастического процесса равно нулю.
  Дисперсия равна 
 \begin_inset Formula $\tau$
 \end_inset
@@ -2455,6 +2481,14 @@ d\gamma\left(t\right)=a_{x}'\left(\xi_{s,x}\left(\vartheta\right)\right)\gamma\l
 
 \end_layout
 
+\begin_layout Standard
+??? Разве не 
+\begin_inset Formula $d\eta=\left[\sin\xi\left(t\right)+\sin\left(\xi\left(t\right)\right)t\cos x-\frac{1}{2}cos^{2}\left(\xi\left(t\right)\right)t\sin x\right]dt+t\cos^{2}\xi\left(t\right)dw\left(t\right)$
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Марковские процессы
 \end_layout
@@ -2496,7 +2530,9 @@ E\left[f\left(\xi\left(T\right)\right)|{\cal F}_{t}\right]=E\left[f\left(\xi\lef
 \end_layout
 
 \begin_layout Standard
-С каждым марковским процессом связана его переходная вероятность
+С каждым марковским процессом связана его 
+\series bold
+переходная вероятность
 \end_layout
 
 \begin_layout Standard
@@ -2511,8 +2547,9 @@ E\left[f\left(\xi\left(T\right)\right)|{\cal F}_{t}\right]=E\left[f\left(\xi\lef
 \end_layout
 
 \begin_layout Standard
-В терминах переходной вероятности, марковское свойство описывается уравнением
- Чепмена-Колмогорова
+В терминах переходной вероятности, марковское свойство описывается 
+\series bold
+уравнением Чепмена-Колмогорова
 \end_layout
 
 \begin_layout Standard
@@ -2527,11 +2564,7 @@ E\left[f\left(\xi\left(T\right)\right)|{\cal F}_{t}\right]=E\left[f\left(\xi\lef
 \begin_inset Formula $P\left(s,x,t,G\right)=\int_{G}p\left(s,x,t,y\right)dy$
 \end_inset
 
- 
-\end_layout
-
-\begin_layout Standard
-Тогда уравнение Чепмена-Колмогорова имеет вид:
+, Тогда уравнение Чепмена-Колмогорова имеет вид:
 \end_layout
 
 \begin_layout Standard
@@ -2711,7 +2744,7 @@ d\xi=a\left(\xi\left(\vartheta\right)\right)d\vartheta+A\left(\xi\left(\vartheta
 \begin_inset Formula $\xi_{s,x}\left(t\right)$
 \end_inset
 
-задачи (5.1).
+ задачи (5.1).
  Тогда 
 \begin_inset Formula $\xi_{s,x}\left(t\right)$
 \end_inset
@@ -2935,7 +2968,11 @@ u\left(s+\Delta s,x\right)-u\left(s,x\right)=\int f\left(y\right)p\left(s+\Delta
 \begin_inset Formula $\underset{\Delta s\rightarrow0}{lim}\frac{u\left(s+\Delta s,x\right)-u\left(s,x\right)}{\Delta s}=\frac{\partial u}{\partial s}=-\left[a\left(x\right)\frac{\partial u}{\partial x}+\frac{1}{2}A^{2}\left(x\right)\frac{\partial^{2}u}{\partial x^{2}}\right]$
 \end_inset
 
- ??? как здесь используется ф-ла Ито?
+ В квадртаной скобке находится слагаемое перед 
+\begin_inset Formula $ds$
+\end_inset
+
+ в формуле Ито.
 \end_layout
 
 \begin_layout Standard
@@ -2952,6 +2989,12 @@ u\left(s+\Delta s,x\right)-u\left(s,x\right)=\int f\left(y\right)p\left(s+\Delta
 \end_inset
 
  
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Пример:
 \end_layout
 
 \begin_layout Standard
