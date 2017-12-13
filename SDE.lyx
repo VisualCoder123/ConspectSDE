@@ -109,7 +109,7 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Section
-Стохастический интеграл, формула Ито
+Стохастические интегралы
 \end_layout
 
 \begin_layout Subsection
@@ -491,6 +491,16 @@ LatexCommand tableofcontents
 \end_inset
 
  -измеримая СВ.
+\end_layout
+
+\begin_layout Standard
+По идее, 
+\series bold
+отсюда начинается ответ на этот вопрос
+\series default
+.
+ Но вся предыдущая теория будет использоваться при оценке свойств стохастическог
+о интеграла.
 \end_layout
 
 \begin_layout Subsection
@@ -1328,14 +1338,21 @@ I\left(A\right)=\sum A\left(t_{k}\right)\Delta_{k}w\in{\cal R}^{n}
 \begin_inset Formula ${\cal F}_{t}^{w}$
 \end_inset
 
- - измерима
-\end_layout
-
-\begin_layout Standard
+ - измерима.
+ 
 \begin_inset Formula $\left(x,y\right)=\sum x_{k}\cdot y_{k}$
 \end_inset
 
- - скалярное произведение
+ - скалярное произведение.
+\end_layout
+
+\begin_layout Standard
+Пусть 
+\begin_inset Formula $\Delta_{k}w_{j}=w_{j}\left(t_{k+1}\right)-w_{j}\left(t_{k}\right)$
+\end_inset
+
+.
+ Тогда 
 \end_layout
 
 \begin_layout Standard
@@ -1352,7 +1369,6 @@ I\left(A\right)=\sum A\left(t_{k}\right)\Delta_{k}w\in{\cal R}^{n}
 \end_inset
 
  - измеримая.
- ???
 \end_layout
 
 \begin_layout Standard
@@ -1361,13 +1377,6 @@ I\left(A\right)=\sum A\left(t_{k}\right)\Delta_{k}w\in{\cal R}^{n}
 
  ??? Правильная ли это формула? В некоторых конспектах ее нет, по каким
  индексам идет суммирование - непонятно
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $\Delta_{k}w_{j}=w_{j}\left(t_{k+1}\right)-w_{j}\left(t_{k}\right)$
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -1720,14 +1729,14 @@ d\xi=a\left(t,\xi\left(t\right)\right)dt+A\left(t,\xi\left(t\right)\right)dw\lef
 \begin_layout Standard
 Сформулируем необходимое и достаточное условие существования решения уравнения
  (3.4).
- Будем говорить, что выполнено условие У1, если справедилвы оценки:
+ Будем говорить, что выполнено условие У1, если справедливы оценки:
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{align*}
 \left|a\left(t,x\right)\right|^{2}+\left|A\left(t,x\right)\right|^{2} & \leq C\left[1+\left|x\right|^{2}\right]\\
-\left|a\left(t,x\right)-a\left(t,y\right)\right|^{2}+\left|A\left(t,x\right)-A\left(t,y\right)\right|^{2} & \leq L\left(x,y\right)^{2}\\
+\left|a\left(t,x\right)-a\left(t,y\right)\right|^{2}+\left|A\left(t,x\right)-A\left(t,y\right)\right|^{2} & \leq L\left|\left|x-y\right|\right|^{2}\\
 C,L & -\text{неслучайные постоянные}
 \end{align*}
 
@@ -1801,7 +1810,7 @@ C,L & -\text{неслучайные постоянные}
 \end_inset
 
 , удовлетворяющий (5.4).
- ??? Точно 2? Может быть n?
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1818,7 +1827,7 @@ C,L & -\text{неслучайные постоянные}
 \begin_inset Formula $\alpha\left(t\right)$
 \end_inset
 
- - положительная функция, уодвлетворяющая неравенству 
+ - положительная функция, удовлетворяющая неравенству 
 \begin_inset Formula 
 \begin{equation}
 \alpha\left(t\right)\leq A+\int_{0}^{t}B\alpha\left(\tau\right)d\tau
@@ -1955,7 +1964,8 @@ C,L & -\text{неслучайные постоянные}
 \begin_inset Formula $E\left|\int_{0}^{t}A\left(\tau\right)dw\left(\tau\right)\right|^{2}\leq\int_{0}^{t}A^{2}\left(\tau\right)d\tau$
 \end_inset
 
- ??? Откуда эта формула.
+.
+ Эта формула определена в конце третьей страницы.
  Также воспользуемся тем, что 
 \begin_inset Formula $\left|a+b\right|^{2}\leq2a^{2}+2b^{2}$
 \end_inset
@@ -1966,7 +1976,22 @@ C,L & -\text{неслучайные постоянные}
 \begin_layout Standard
 \begin_inset Formula 
 \[
-E\left|\xi\right|
+\alpha\left(t\right)\leq2t\int_{0}^{t}E\left|a\left(\vartheta,\xi\left(\vartheta\right)\right)-a\left(\vartheta,\eta\left(\vartheta\right)\right)\right|^{2}d\vartheta+2\int_{0}^{t}E\left[A\left(\vartheta,\xi\left(\vartheta\right)\right)-A\left(\vartheta,\eta\left(\vartheta\right)\right)\right]^{2}d\vartheta
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Используя условие У1 мы получим
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\alpha\left(t\right)\leq2\int_{0}^{t}E\left[t\left|a\left(\vartheta,\xi\left(\vartheta\right)\right)-a\left(\vartheta,\eta\left(\vartheta\right)\right)\right|^{2}+\left|A\left(\vartheta,\xi\left(\vartheta\right)\right)-A\left(\vartheta,\eta\left(\vartheta\right)\right)\right|^{2}\right]d\vartheta
 \]
 
 \end_inset
@@ -1977,7 +2002,7 @@ E\left|\xi\right|
 \begin_layout Standard
 \begin_inset Formula 
 \[
-\alpha\left(t\right)\leq t\int_{0}^{t}E\left|a\left(\vartheta,\xi\left(\vartheta\right)\right)-a\left(\vartheta,\eta\left(\vartheta\right)\right)\right|^{2}d\vartheta+\int_{0}^{t}E\left[A\left(\vartheta,\xi\left(\vartheta\right)\right)-A\left(\vartheta,\eta\left(\vartheta\right)\right)\right]^{2}d\vartheta
+\alpha\left(t\right)\leq2\int_{0}^{t}E\left[tL\left|\left|\xi\left(\vartheta\right)-\eta\left(\vartheta\right)\right|\right|^{2}+L\left|\left|\xi\left(\vartheta\right)-\eta\left(\vartheta\right)\right|\right|^{2}\right]d\vartheta=
 \]
 
 \end_inset
@@ -1986,24 +2011,26 @@ E\left|\xi\right|
 \end_layout
 
 \begin_layout Standard
-Используя условие У1 мы получим ??? Как мы их используем?
+\begin_inset Formula 
+\[
+=2L\left(t+1\right)\int_{0}^{t}E\left|\left|\xi\left(\vartheta\right)-\eta\left(\vartheta\right)\right|\right|^{2}d\vartheta
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Формула ниже имеет вид предыдущей формулы, но вместо двух интегралов используетс
-я 
-\begin_inset Formula $\alpha\left(t\right)$
+\begin_inset Formula $\alpha\left(t\right)=2L\left(t+1\right)\int_{0}^{t}\alpha\left(\vartheta\right)d\vartheta$
 \end_inset
 
-.
- Видимо, мы чего-то не понимаем об условии У1 :)
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $\alpha\left(t\right)\leq Lt\int_{0}^{t}\alpha\left(\vartheta\right)d\vartheta+L\int_{0}^{t}\alpha\left(\vartheta\right)d\vartheta=L\left(1+t\right)\int_{0}^{t}\alpha\left(\vartheta\right)d\vartheta$
+ .
+ В силу леммы Гронуолла получим соотношение 
+\begin_inset Formula $E\left|\left|\xi\left(t\right)-\eta\left(t\right)\right|\right|^{2}=0$
 \end_inset
 
- в силу леммы Гронуолла ??? Как здесь используется лемма Гронуолла
+
 \end_layout
 
 \begin_layout Standard
@@ -2081,22 +2108,22 @@ E\left|\xi\right|
 \end_layout
 
 \begin_layout Standard
-Применим неравенство 
+Чтобы это показать, применим неравенство 
 \begin_inset Formula $\left|a+b+c\right|^{2}\leq3\left(\left|a\right|^{2}+\left|b\right|^{2}+\left|c\right|^{2}\right)$
 \end_inset
 
-
+ ??? Почему тройка только перед ||x||
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula $E\left|\left|\xi\left(t\right)\right|\right|^{2}\leq3\left|\left|x\right|\right|^{2}+t\int_{0}^{t}E\left|a\left(\vartheta,\xi\left(\vartheta\right)\right)\right|^{2}d\vartheta+\int_{0}^{t}E\left|A\left(\vartheta,\xi\left(\vartheta\right)\right)\right|^{2}d\vartheta$
 \end_inset
 
- ??? Почему тройка только у первого слагаемого
+
 \end_layout
 
 \begin_layout Standard
-В силу У1 ??? Почему в силу У1?
+В силу У1
 \end_layout
 
 \begin_layout Standard
@@ -2118,6 +2145,8 @@ E\left|\xi\right|
 \end_layout
 
 \begin_layout Standard
+
+\series bold
 Свойства решений СДУ.
 \end_layout
 
@@ -2144,7 +2173,7 @@ d\xi\left(t\right)=a\left(\xi\left(t\right)\right)dt+A\left(\xi\left(t\right)\ri
 \begin_layout Standard
 и покажем, что его 
 \series bold
-решение нерперывно по начальным данным
+решение непрерывно по начальным данным
 \series default
 .
 \end_layout
@@ -2158,7 +2187,7 @@ d\xi\left(t\right)=a\left(\xi\left(t\right)\right)dt+A\left(\xi\left(t\right)\ri
 \end_layout
 
 \begin_layout Standard
-Оценим разность 
+Оценим разность ??? Тот же вопрос с тройками
 \end_layout
 
 \begin_layout Standard
@@ -2176,11 +2205,15 @@ d\xi\left(t\right)=a\left(\xi\left(t\right)\right)dt+A\left(\xi\left(t\right)\ri
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $=3\left(x-y\right)^{2}+3\left(t-s+1\right)\int_{s}^{t}EL\left|\xi_{s,x}\left(\vartheta\right)-\xi_{s,y}\left(\vartheta\right)\right|^{2}d\vartheta\leq3\left(x-y\right)^{2}e^{kT}$
+\begin_inset Formula $=3\left(x-y\right)^{2}+3\left(t-s+1\right)\int_{s}^{t}EL\left|\xi_{s,x}\left(\vartheta\right)-\xi_{s,y}\left(\vartheta\right)\right|^{2}d\vartheta$
+\end_inset
+
+ в силу леммы Гронуолла 
+\begin_inset Formula $\leq3\left(x-y\right)^{2}e^{kT}$
 \end_inset
 
 , 
-\begin_inset Formula $k=3\left(T+1\right)L$
+\begin_inset Formula $k=3\left(t-s+1\right)L$
 \end_inset
 
 ,
@@ -2188,11 +2221,6 @@ d\xi\left(t\right)=a\left(\xi\left(t\right)\right)dt+A\left(\xi\left(t\right)\ri
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-Я переписал эту формулу по сравнению с предыдущей версией конспекта.
- Поменял порядок скобок так, чтобы это было логично :)
 \end_layout
 
 \begin_layout Standard
@@ -2229,10 +2257,6 @@ d\eta\left(\vartheta\right)=a_{x}'\left(\xi\left(\vartheta\right)\right)\eta\lef
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-??? Как получить эти формулы
 \end_layout
 
 \begin_layout Standard
@@ -2553,7 +2577,11 @@ E\left[f\left(\xi\left(T\right)\right)|{\cal F}_{t}\right]=E\left[f\left(\xi\lef
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $P\left(s,x,t,G\right)=\int_{-\infty}^{\infty}p\left(s,x,\vartheta,dz\right)p\left(\vartheta,z,t,G\right)$
+\begin_inset Formula 
+\[
+p\left(s,x,t,G\right)=\int_{-\infty}^{\infty}p\left(s,x,\vartheta,dz\right)p\left(\vartheta,z,t,G\right)
+\]
+
 \end_inset
 
 
@@ -2564,19 +2592,26 @@ E\left[f\left(\xi\left(T\right)\right)|{\cal F}_{t}\right]=E\left[f\left(\xi\lef
 \begin_inset Formula $P\left(s,x,t,G\right)=\int_{G}p\left(s,x,t,y\right)dy$
 \end_inset
 
-, Тогда уравнение Чепмена-Колмогорова имеет вид:
+, то уравнение Чепмена-Колмогорова имеет вид:
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $p\left(s,x,t,y\right)=\int_{-\infty}^{\infty}p\left(s,x,\vartheta,z\right)p\left(\vartheta,z,t,y\right)dz$
+\begin_inset Formula 
+\[
+p\left(s,x,t,y\right)=\int_{-\infty}^{\infty}p\left(s,x,\vartheta,z\right)p\left(\vartheta,z,t,y\right)dz
+\]
+
 \end_inset
 
  
 \end_layout
 
 \begin_layout Standard
-Каждый марковский процесс порождает эволюционное семейство, действующее
- в пространстве 
+Каждый марковский процесс порождает 
+\series bold
+эволюционное семейство
+\series default
+, действующее в пространстве 
 \begin_inset Formula $V$
 \end_inset
 
@@ -2623,9 +2658,6 @@ E\left[f\left(\xi\left(T\right)\right)|{\cal F}_{t}\right]=E\left[f\left(\xi\lef
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset Formula $=\int_{-\infty}^{\infty}p\left(s,x,\vartheta,z\right)\left(u\left(\vartheta,t\right)f\right)\left(z\right)dz=\int_{-\infty}^{\infty}p\left(s,x,\vartheta,z\right)\phi\left(z\right)dz=u\left(s,\vartheta\right)\phi\left(z\right)=u\left(s,\vartheta\right)u\left(\vartheta,t\right)f\left(x\right)$
 \end_inset
 
@@ -2866,7 +2898,11 @@ d\xi=a\left(\xi\left(\vartheta\right)\right)d\vartheta+A\left(\xi\left(\vartheta
 \end_layout
 
 \begin_layout Standard
-Вычислим: 
+С учетом того, что 
+\begin_inset Formula $u\left(s,x\right)=Ef\left(\xi_{s,x}\left(T\right)\right)=\int f\left(y\right)p\left(s,x,T,y\right)dy$
+\end_inset
+
+, вычислим: 
 \begin_inset Formula 
 \begin{equation}
 u\left(s+\Delta s,x\right)-u\left(s,x\right)=\int f\left(y\right)p\left(s+\Delta s,x,T,y\right)dy-\int f\left(y\right)p\left(s,x,T,dy\right)
@@ -2885,10 +2921,6 @@ u\left(s+\Delta s,x\right)-u\left(s,x\right)=\int f\left(y\right)p\left(s+\Delta
 \begin_inset Formula $p\left(s,x,T,y\right)=\int p\left(s,x,s+\Delta s,z\right)p\left(s+\Delta s,z,T,y\right)dy$
 \end_inset
 
- ??? Но ведь уравнение Чепмена-Колмогорова имеет вид: 
-\begin_inset Formula $p\left(s,x,t,y\right)=\int_{-\infty}^{\infty}p\left(s,x,\vartheta,z\right)p\left(\vartheta,z,t,y\right)dz$
-\end_inset
-
  
 \end_layout
 
@@ -2902,13 +2934,6 @@ u\left(s+\Delta s,x\right)-u\left(s,x\right)=\int f\left(y\right)p\left(s+\Delta
 u\left(s+\Delta s,x\right)-u\left(s,x\right)=\int f\left(y\right)p\left(s+\Delta s,x,T,y\right)dy-\int f\left(y\right)\int p\left(s,x,s+\Delta s,z\right)\cdot p\left(s+\Delta s,z,T,y\right)dzdy
 \end{equation}
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $u\left(s,x\right)=Ef\left(\xi_{s,x}\left(T\right)\right)=\int f\left(y\right)p\left(s,x,T,y\right)dy$
 \end_inset
 
 
@@ -2947,14 +2972,7 @@ u\left(s+\Delta s,x\right)-u\left(s,x\right)=\int f\left(y\right)p\left(s+\Delta
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $u\left(s+\Delta s,x\right)-u\left(s,x\right)=-E\left[u\left(s+\Delta s,\xi_{s,x}\left(s+\Delta s\right)\right)-u\left(s+\Delta s,x\right)\right]$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $u\left(s+\Delta s,\xi_{s,x}\left(s+\Delta s\right)\right)-u\left(s+\Delta s,x\right)$
+\begin_inset Formula $u\left(s+\Delta s,x\right)-u\left(s,x\right)=u\left(s+\Delta s,x\right)-E\left[u\left(s+\Delta s,\xi_{s,x}\left(s+\Delta s\right)\right)\right]$
 \end_inset
 
 
@@ -3256,6 +3274,32 @@ u\left(s,x\right)=E\left[\eta\left(T\right)f\left(\xi_{s,x}\left(T\right)\right)
 \end_layout
 
 \begin_layout Standard
+
+\emph on
+Примечание
+\emph default
+: 
+\begin_inset Formula $\eta\left(s+\Delta s\right)=\exp\int_{s}^{s+\Delta s}c\left(\xi\left(a\right)\right)d\vartheta$
+\end_inset
+
+ ??? Здесь 
+\begin_inset Formula $\eta\left(t\right)$
+\end_inset
+
+- верхний предел зависит от аргумента.
+ Может быть 
+\begin_inset Formula $\eta\left(t\right)=\int_{s}^{t}$
+\end_inset
+
+...
+ а не 
+\begin_inset Formula $\int_{s}^{T}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Заметим, что процесс 
 \begin_inset Formula $\eta\left(t\right)$
 \end_inset
@@ -3277,7 +3321,7 @@ u\left(s,x\right)=E\left[\eta\left(T\right)f\left(\xi_{s,x}\left(T\right)\right)
 \end_inset
 
  в качестве верхнего предела, см.
- следующий вопрос
+ предыдущий вопрос
 \end_layout
 
 \begin_layout Standard
@@ -3303,37 +3347,15 @@ u\left(s,x\right)=E\left[\eta\left(T\right)f\left(\xi_{s,x}\left(T\right)\right)
 \begin_inset Formula $u\left(s+\Delta s,x\right)-u\left(s,x\right)=u\left(s+\Delta s,x\right)-E\eta\left(s+\Delta s\right)+f\left(\xi_{s,x}\left(s+\Delta s\right)\right)$
 \end_inset
 
- 
-\end_layout
-
-\begin_layout Standard
-Примечание: 
-\begin_inset Formula $\eta\left(s+\Delta s\right)=\exp\int_{s}^{s+\Delta s}c\left(\xi\left(a\right)\right)d\vartheta$
-\end_inset
-
- ??? Здесь 
-\begin_inset Formula $\eta\left(t\right)$
-\end_inset
-
-- верхний предел зависит от аргумента.
- Может быть 
-\begin_inset Formula $\eta\left(t\right)=\int_{s}^{t}$
-\end_inset
-
-...
- а не 
-\begin_inset Formula $\int_{s}^{T}$
-\end_inset
-
-
+ ??? Почему +, а не умножение
 \end_layout
 
 \begin_layout Standard
 Рассмотрим разность 
-\begin_inset Formula $E\left[\eta\left(s+\Delta s\right)-\eta\left(s\right)\right]f\left(\xi_{s,x}\left(s+\Delta s\right)\right)+E\left[\eta\left(s\right)[f\left(\xi_{s,x}\left(s+\Delta s\right)\right)-f\left(x\right)\right]$
+\begin_inset Formula $E\left[\eta\left(s+\Delta s\right)-\eta\left(s\right)\right]f\left(\xi_{s,x}\left(s+\Delta s\right)\right)+E\left[\eta\left(s\right)f\left(\xi_{s,x}\left(s+\Delta s\right)\right)-f\left(x\right)\right]$
 \end_inset
 
- ??? Есть лишняя открывающая скобка
+ ??? Правильно ли расставлены скобки
 \end_layout
 
 \begin_layout Standard
@@ -3554,11 +3576,7 @@ d\xi=a\left(\xi\left(\vartheta\right)\right)d\vartheta+A\left(\xi\left(\vartheta
 \series default
  будем называть параболические уравнения, коэффициенты которых зависят как
  от временной и пространственной переменных, так и от искомой скалярной
- функции 
-\begin_inset Formula $f$
-\end_inset
-
-.
+ функции.
 \end_layout
 
 \begin_layout Standard
@@ -3576,7 +3594,7 @@ d\xi=a\left(\xi\left(\vartheta\right)\right)d\vartheta+A\left(\xi\left(\vartheta
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-d\xi=a\left(\xi\left(\vartheta\right),u\left(\vartheta,\xi\left(\vartheta\right)\right)\right)d\vartheta+A\left(\xi\left(\vartheta,\nu\left(\vartheta,\xi\left(\vartheta\right)\right)\right)\right)dw\left(\vartheta\right)
+d\xi=a\left(\xi\left(\vartheta\right),u\left(\vartheta,\xi\left(\vartheta\right)\right)\right)d\vartheta+A\left(\xi\left(\vartheta,u\left(\vartheta,\xi\left(\vartheta\right)\right)\right)\right)dw\left(\vartheta\right)
 \end{equation}
 
 \end_inset
@@ -3608,7 +3626,7 @@ u\left(s,x\right)=Eu_{0}\left(\xi_{s,x}\left(T\right)\right)
 \begin_inset Formula $u_{0}\left(x\right)$
 \end_inset
 
-при котором существует единственное решение системы (9.2) (9.3)
+при котором существует единственное решение системы (6.2) (6.3)
 \end_layout
 
 \begin_layout Standard
@@ -3732,7 +3750,7 @@ u\left(s,x\right)=Eu_{0}\left(\xi_{s,x}\left(T\right)\right)
 \end_layout
 
 \begin_layout Standard
-Покажем, что семейство функцией 
+Покажем, что семейство функций 
 \begin_inset Formula $u^{n}\left(s,x\right)$
 \end_inset
 
@@ -3742,7 +3760,7 @@ u\left(s,x\right)=Eu_{0}\left(\xi_{s,x}\left(T\right)\right)
 \end_inset
 
  равномерно ограничено.
- Для того, чтобы это доказать расмотрим линейную систему
+ Для того, чтобы это доказать, расмотрим линейную систему ???
 \end_layout
 
 \begin_layout Standard
@@ -3750,7 +3768,7 @@ u\left(s,x\right)=Eu_{0}\left(\xi_{s,x}\left(T\right)\right)
 \begin_inset Formula $g\left(s,x\right)$
 \end_inset
 
- - ограниченная мин??? функция или даже дифференцируемая по 
+ - ограниченная Липшецева функция или даже дифференцируемая по 
 \begin_inset Formula $x$
 \end_inset
 
@@ -3759,22 +3777,19 @@ u\left(s,x\right)=Eu_{0}\left(\xi_{s,x}\left(T\right)\right)
 \begin_inset Formula $\left|\frac{\partial g\left(s,x\right)}{\partial x}\right|\leq k'_{g}\left(s\right)$
 \end_inset
 
- 
-\end_layout
-
-\begin_layout Standard
-Рассмотрим СДУ
+.
+ Рассмотрим СДУ
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-d\xi=a\left(\xi\left(\vartheta\right),g\left(\vartheta,\xi\left(\vartheta\right)\right)\right)d\vartheta+A\left(\xi\left(\vartheta\right),g\left(\vartheta\right),g\left(\vartheta,\xi\left(\vartheta\right)\right)\right)dw\left(\vartheta\right),\xi\left(s\right)=x
+d\xi=a\left(\xi\left(\vartheta\right),g\left(\vartheta,\xi\left(\vartheta\right)\right)\right)d\vartheta+A\left(\xi\left(\vartheta\right),g\left(\vartheta,\xi\left(\vartheta\right)\right)\right)dw\left(\vartheta\right),\xi\left(s\right)=x
 \end{equation}
 
 \end_inset
 
- 
+
 \begin_inset Formula 
 \begin{equation}
 \nu\left(s,x\right)=Eu_{0}\left(\xi_{s,x}\left(T\right)\right)
@@ -3794,16 +3809,16 @@ d\xi=a\left(\xi\left(\vartheta\right),g\left(\vartheta,\xi\left(\vartheta\right)
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $d\eta\left(\vartheta\right)=\left[a'_{x}\left(\xi\left(\vartheta\right),g\left(\vartheta,g\left(\vartheta\right)\right)\right)+a'_{g}\left(\xi\left(\vartheta\right),g\left(\vartheta\right),\xi\left(\vartheta\right)\right)\frac{\partial g}{\partial x}\left(\vartheta,\xi\left(\vartheta\right)\right)\right]$
+\begin_inset Formula $d\eta\left(\vartheta\right)=\left[a'_{x}\left(\xi\left(\vartheta\right),g\left(\vartheta,g\left(\vartheta\right)\right)\right)+a'_{g}\left(\xi\left(\vartheta\right),g\left(\vartheta,\xi\left(\vartheta\right)\right)\right)\frac{\partial g}{\partial x}\left(\vartheta,\xi\left(\vartheta\right)\right)\right]$
 \end_inset
 
-
+??? Где дифференциал
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\eta\left(\vartheta\right)d\vartheta+\left[A'_{x}\left(\xi\right)\left(\vartheta\right),g\left(\vartheta,\xi\left(\vartheta\right)\right)+A'_{g}\left(\right)\frac{\partial g}{\partial x}\left(\vartheta,\xi\left(\vartheta\right)\right)\right]\eta\left(\vartheta\right)dw\left(\vartheta\right)
+\eta\left(\vartheta\right)d\vartheta+\left[A'_{x}\left(\xi\left(\vartheta\right)\right),g\left(\vartheta,\xi\left(\vartheta\right)\right)+A'_{g}\left(\vartheta,\xi\left(\vartheta\right)\right)\frac{\partial g}{\partial x}\left(\vartheta,\xi\left(\vartheta\right)\right)\right]\eta\left(\vartheta\right)dw\left(\vartheta\right)
 \end{equation}
 
 \end_inset
@@ -3812,7 +3827,11 @@ d\xi=a\left(\xi\left(\vartheta\right),g\left(\vartheta,\xi\left(\vartheta\right)
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\frac{\partial}{\partial x}u_{0}\left(\xi_{s,x}\left(T\right)\right)$
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial\nu\left(s,x\right)}{\partial x}=E\frac{\partial u_{0}\left(\xi_{s,x}\left(T\right)\right)}{\partial y}\cdot\nu\left(T\right)
+\end{equation}
+
 \end_inset
 
 
@@ -3834,7 +3853,11 @@ d\xi=a\left(\xi\left(\vartheta\right),g\left(\vartheta,\xi\left(\vartheta\right)
 \begin_inset Formula $\left|\frac{\partial\nu\left(t,x\right)}{\partial x}\right|\leq B\left(t\right)$
 \end_inset
 
- 
+ для всех 
+\begin_inset Formula $t$
+\end_inset
+
+ из интервала.
 \end_layout
 
 \begin_layout Standard
@@ -3893,7 +3916,7 @@ d\xi=a\left(\xi\left(\vartheta\right),g\left(\vartheta,\xi\left(\vartheta\right)
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\frac{\partial u}{\partial s}+a\left(x\right)\frac{\partial u}{\partial x}+\frac{A^{2}\left(x\right)}{2}\frac{\partial^{2}u}{\partial x^{2}}+a\left(x\right)u+f\left(x\right)=0$
+\begin_inset Formula $\frac{\partial u}{\partial s}+a\left(x\right)\frac{\partial u}{\partial x}+\frac{A^{2}}{2}\left(x\right)\frac{\partial^{2}u}{\partial x^{2}}+a\left(x\right)u+f\left(x\right)=0$
 \end_inset
 
  
@@ -3952,7 +3975,7 @@ d\xi=a\left(\xi\left(\vartheta\right),g\left(\vartheta,\xi\left(\vartheta\right)
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\eta\left(0\right)=e^{\int_{s}^{\vartheta}c\left(\vartheta\left(\tau\right)\right)d\tau}$
+\begin_inset Formula $\eta\left(\vartheta\right)=e^{\int_{s}^{\vartheta}c\left(\xi\left(\tau\right)\right)d\tau}$
 \end_inset
 
 
@@ -4005,7 +4028,7 @@ d\xi=a\left(\xi\left(\vartheta\right),g\left(\vartheta,\xi\left(\vartheta\right)
 \begin_inset Formula $\frac{1}{\Delta}\left[e^{\int_{s}^{s+\Delta s}c\left(\xi\left(\vartheta\right)\right)d\vartheta}-1\right]e^{\int_{s+\Delta s}^{T}c\left(\xi\left(\vartheta\right)\right)d\vartheta}u_{0}\left(\xi_{s,x}\left(T\right)\right)=c\left(x\right)du\left(s,x\right)$
 \end_inset
 
-
+ ??? Как это работает
 \end_layout
 
 \begin_layout Standard
@@ -4097,7 +4120,7 @@ d\xi=a\left(\xi\left(\vartheta\right),g\left(\vartheta,\xi\left(\vartheta\right)
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\xi_{n}\left(t\right)=x+\sum_{k=1}^{n}\int_{t_{k}}^{t_{k+1}}\left[a\left(\xi\left(\vartheta\right)\right)d\vartheta+\int_{t_{k}}^{t_{k+1}}A\left(\xi\left(\vartheta\right)\right)dw\left(\vartheta\right)\right]$
+\begin_inset Formula $\xi_{n}\left(t\right)=x+\sum_{k=1}^{n}\left[\int_{t_{k}}^{t_{k+1}}a\left(\xi\left(\vartheta\right)\right)d\vartheta+\int_{t_{k}}^{t_{k+1}}A\left(\xi\left(\vartheta\right)\right)dw\left(\vartheta\right)\right]$
 \end_inset
 
 
@@ -4118,7 +4141,7 @@ d\xi=a\left(\xi\left(\vartheta\right),g\left(\vartheta,\xi\left(\vartheta\right)
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $u\left(s,x\right)=E\nu\left(\xi_{s,x}\left(???,w\right)\right)$
+\begin_inset Formula $u\left(s,x\right)=Eu\left(\xi_{s,x}\left(???,w\right)\right)$
 \end_inset
 
 ???
@@ -4139,7 +4162,7 @@ d\xi=a\left(\xi\left(\vartheta\right),g\left(\vartheta,\xi\left(\vartheta\right)
 \end_layout
 
 \begin_layout Standard
-Напомним, что мы расматриваем систему ??? Когда мы начали ее рассматривать?
+Напомним, что мы расматриваем систему
 \begin_inset Formula 
 \begin{equation}
 d\xi=a^{u}\left(\xi\left(\vartheta\right)\right)d\vartheta+A^{u}\left(\xi\left(\vartheta\right)\right)dw\left(\vartheta\right),\xi\left(s\right)=x
@@ -4153,7 +4176,7 @@ d\xi=a^{u}\left(\xi\left(\vartheta\right)\right)d\vartheta+A^{u}\left(\xi\left(\
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-u\left(s,x\right)=Eu_{0}\left(\xi_{s,x}\left(T\right)\right),\text{где}a^{u}\left(x\right)=a\left(x,u\left(s,x\right)\right)
+u\left(s,x\right)=Eu_{0}\left(\xi_{s,x}\left(T\right)\right),\text{где }a^{u}\left(x\right)=a\left(x,u\left(s,x\right)\right)
 \end{equation}
 
 \end_inset
@@ -4240,7 +4263,7 @@ g\left(s,x\right)=Eu_{0}\left(\xi_{s,x}\left(T\right)\right)
 \begin_inset Formula $\xi_{s,x}\left(\vartheta\right)$
 \end_inset
 
- - решение (8.5)
+ - решение (7.5)
 \end_layout
 
 \begin_layout Standard
@@ -4259,10 +4282,8 @@ g\left(s,x\right)=Eu_{0}\left(\xi_{s,x}\left(T\right)\right)
 \begin_inset Formula $g\left(s,x\right)$
 \end_inset
 
- тоже ограниченная Липшецева функция с одинаковой константой Липшица.
-\end_layout
-
-\begin_layout Standard
+ тоже ограниченная Липшецева функция с одинаковой константой Липшица: если
+ 
 \begin_inset Formula $\left|\nu\left(t,x\right)-\nu\left(t,y\right)\right|=L\left(t\right)\left|x-y\right|$
 \end_inset
 
@@ -4354,7 +4375,7 @@ g\left(s,x\right)=Eu_{0}\left(\xi_{s,x}\left(T\right)\right)
 \end_inset
 
 где 
-\begin_inset Formula $L_{0},K_{???}$
+\begin_inset Formula $L_{0},K_{0}$
 \end_inset
 
 - константа Липшица функции 
@@ -4369,10 +4390,6 @@ g\left(s,x\right)=Eu_{0}\left(\xi_{s,x}\left(T\right)\right)
 \end_layout
 
 \begin_layout Standard
-??? Во всем этом разделе что-то не так со скобками, прошу проверить :)
-\end_layout
-
-\begin_layout Standard
 Таким образом:
 \end_layout
 
@@ -4380,12 +4397,12 @@ g\left(s,x\right)=Eu_{0}\left(\xi_{s,x}\left(T\right)\right)
 \begin_inset Formula $\left|g\left(s,x\right)-g\left(s,y\right)\right|^{2}\leq L_{0}E\left|\xi_{s,x}\left(T\right)-\xi_{s,y}\left(T\right)\right|^{2}\leq\left|x-y\right|^{2}\exp\int_{s}^{T}\left[K_{1}+K_{2}\beta\left(\vartheta\right)\right]d\vartheta$
 \end_inset
 
- 
+ ??? Лемма Гронуолла
 \end_layout
 
 \begin_layout Standard
 Поскольку 
-\begin_inset Formula $E\left|\xi_{s,x}\left(T\right)-\xi_{s,y}\left(T\right)\right|^{2}\leq\left|x-y\right|^{2}+\int_{s}^{T}c\left[\left|\xi_{s,x}\left(t\right)-\xi_{s,y}\left(T\right)\right|^{2}\right]-\left[1-K_{???}\beta\left(\vartheta\right)\right]d\vartheta$
+\begin_inset Formula $E\left|\xi_{s,x}\left(T\right)-\xi_{s,y}\left(T\right)\right|^{2}\leq\left|x-y\right|^{2}+\int_{s}^{T}c\left[\left|\xi_{s,x}\left(t\right)-\xi_{s,y}\left(T\right)\right|^{2}\right]-\left[1-K_{v}\beta\left(\vartheta\right)\right]d\vartheta$
 \end_inset
 
  
@@ -4393,7 +4410,7 @@ g\left(s,x\right)=Eu_{0}\left(\xi_{s,x}\left(T\right)\right)
 
 \begin_layout Standard
 Отсюда в силу леммы Гронуолла: 
-\begin_inset Formula $E\left|\xi_{s,x}\left(T\right)-\xi_{s,y}\left(T\right)\right|^{2}\leq\left|x-y\right|^{2}\exp\int_{s}^{T}\left[1+K_{???}\beta\left(\vartheta\right)\right]d\vartheta$
+\begin_inset Formula $E\left|\xi_{s,x}\left(T\right)-\xi_{s,y}\left(T\right)\right|^{2}\leq\left|x-y\right|^{2}\exp\int_{s}^{T}\left[1+K_{v}\beta\left(\vartheta\right)\right]d\vartheta$
 \end_inset
 
  
@@ -4401,7 +4418,7 @@ g\left(s,x\right)=Eu_{0}\left(\xi_{s,x}\left(T\right)\right)
 
 \begin_layout Standard
 Рассмотрим соотношение 
-\begin_inset Formula $\beta\left(t-s\right)=K_{0}\exp\int_{s}^{T}\left[K_{1}+K_{2}\beta\left(t-\vartheta\right)\right]d\vartheta$
+\begin_inset Formula $\beta\left(t-s\right)=K_{0}\exp\int_{s}^{T}\left[K_{1}+K_{2}\beta\left(T-\vartheta\right)\right]d\vartheta$
 \end_inset
 
  и его дифференциальный вариант 
@@ -4465,7 +4482,7 @@ g\left(s,x\right)=Eu_{0}\left(\xi_{s,x}\left(T\right)\right)
 \end_layout
 
 \begin_layout Standard
-и (12.8) приобретает вид 
+и (7.8) приобретает вид 
 \end_layout
 
 \begin_layout Standard
@@ -4684,7 +4701,7 @@ ____
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\eta\left(0\right)=\exp\int_{s}^{\vartheta}c\left(\xi\left(t\right)\right)dt$
+\begin_inset Formula $\eta\left(\vartheta\right)=\exp\int_{s}^{\vartheta}c\left(\xi\left(t\right)\right)dt$
 \end_inset
 
 
@@ -4695,6 +4712,10 @@ ____
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+__________
 \end_layout
 
 \begin_layout Standard
@@ -4751,14 +4772,14 @@ ______
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $d\xi=a\left(\xi\left(\vartheta\right)\right)d\vartheta+A\left(\xi\left(\vartheta\right)\right)dw\left(\vartheta\right),f\left(s\right)=x$
+\begin_inset Formula $d\xi=a\left(\xi\left(\vartheta\right)\right)d\vartheta+A\left(\xi\left(\vartheta\right)\right)dw\left(\vartheta\right),\xi\left(s\right)=x$
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $du\left(\vartheta,\xi\left(\vartheta\right)\right)=\int_{s}^{T}\left(\frac{\partial u}{\partial\vartheta}+a\left(\xi\left(\vartheta\right)\right)\frac{\partial u\left(\vartheta,\xi\left(\vartheta\right)\right)}{\partial x}+\frac{1}{2}A^{2}\left(\xi\left(\vartheta\right)\right)\frac{\partial^{2}u\left(\vartheta,\xi\left(\vartheta\right)\right)}{\partial^{2}x^{2}}+f\left(\xi\left(\vartheta\right)\right)-f\left(\xi\left(\vartheta\right)\right)\right)d\vartheta+\int_{s}^{T}A\frac{\partial u}{\partial x}dw$
+\begin_inset Formula $du\left(\vartheta,\xi\left(\vartheta\right)\right)=\int_{s}^{T}\left(\frac{\partial u}{\partial\vartheta}+a\left(\xi\left(\vartheta\right)\right)\frac{\partial u\left(\vartheta,\xi\left(\vartheta\right)\right)}{\partial x}+\frac{1}{2}A^{2}\left(\xi\left(\vartheta\right)\right)\frac{\partial^{2}u\left(\vartheta,\xi\left(\vartheta\right)\right)}{\partial x^{2}}+f\left(\xi\left(\vartheta\right)\right)-f\left(\xi\left(\vartheta\right)\right)\right)d\vartheta+\int_{s}^{T}A\frac{\partial u}{\partial x}dw$
 \end_inset
 
 
@@ -4840,6 +4861,9 @@ ________
 \end_inset
 
 , 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula $d\vartheta$
 \end_inset
 
